@@ -30,6 +30,8 @@ namespace BiServis
         private void InitializeComponent()
         {
             this.bis_gbx = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.isim_tbx = new System.Windows.Forms.TextBox();
             this.ekle_btn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.jant_tbx = new System.Windows.Forms.TextBox();
@@ -56,8 +58,6 @@ namespace BiServis
             this.label8 = new System.Windows.Forms.Label();
             this.randevuList_btn = new System.Windows.Forms.Button();
             this.cikis_btn = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.isim_tbx = new System.Windows.Forms.TextBox();
             this.bis_gbx.SuspendLayout();
             this.bis1_gbx.SuspendLayout();
             this.ran_gbx.SuspendLayout();
@@ -91,12 +91,28 @@ namespace BiServis
             this.bis_gbx.TabStop = false;
             this.bis_gbx.Text = "Bisiklet Ekle";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(58, 25);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "İsmi:";
+            // 
+            // isim_tbx
+            // 
+            this.isim_tbx.Location = new System.Drawing.Point(92, 22);
+            this.isim_tbx.Name = "isim_tbx";
+            this.isim_tbx.Size = new System.Drawing.Size(100, 20);
+            this.isim_tbx.TabIndex = 0;
+            // 
             // ekle_btn
             // 
             this.ekle_btn.Location = new System.Drawing.Point(126, 238);
             this.ekle_btn.Name = "ekle_btn";
             this.ekle_btn.Size = new System.Drawing.Size(66, 22);
-            this.ekle_btn.TabIndex = 14;
+            this.ekle_btn.TabIndex = 8;
             this.ekle_btn.Text = "EKLE";
             this.ekle_btn.UseVisualStyleBackColor = true;
             this.ekle_btn.Click += new System.EventHandler(this.ekle_Click);
@@ -115,7 +131,7 @@ namespace BiServis
             this.jant_tbx.Location = new System.Drawing.Point(92, 207);
             this.jant_tbx.Name = "jant_tbx";
             this.jant_tbx.Size = new System.Drawing.Size(100, 20);
-            this.jant_tbx.TabIndex = 12;
+            this.jant_tbx.TabIndex = 7;
             // 
             // label6
             // 
@@ -131,7 +147,7 @@ namespace BiServis
             this.fren_tbx.Location = new System.Drawing.Point(92, 181);
             this.fren_tbx.Name = "fren_tbx";
             this.fren_tbx.Size = new System.Drawing.Size(100, 20);
-            this.fren_tbx.TabIndex = 10;
+            this.fren_tbx.TabIndex = 6;
             // 
             // label5
             // 
@@ -147,7 +163,7 @@ namespace BiServis
             this.arAk_tbx.Location = new System.Drawing.Point(92, 155);
             this.arAk_tbx.Name = "arAk_tbx";
             this.arAk_tbx.Size = new System.Drawing.Size(100, 20);
-            this.arAk_tbx.TabIndex = 8;
+            this.arAk_tbx.TabIndex = 5;
             // 
             // label4
             // 
@@ -190,28 +206,28 @@ namespace BiServis
             this.onAk_tbx.Location = new System.Drawing.Point(92, 129);
             this.onAk_tbx.Name = "onAk_tbx";
             this.onAk_tbx.Size = new System.Drawing.Size(100, 20);
-            this.onAk_tbx.TabIndex = 3;
+            this.onAk_tbx.TabIndex = 4;
             // 
             // yil_tbx
             // 
             this.yil_tbx.Location = new System.Drawing.Point(92, 100);
             this.yil_tbx.Name = "yil_tbx";
             this.yil_tbx.Size = new System.Drawing.Size(100, 20);
-            this.yil_tbx.TabIndex = 2;
+            this.yil_tbx.TabIndex = 3;
             // 
             // model_tbx
             // 
             this.model_tbx.Location = new System.Drawing.Point(92, 74);
             this.model_tbx.Name = "model_tbx";
             this.model_tbx.Size = new System.Drawing.Size(100, 20);
-            this.model_tbx.TabIndex = 1;
+            this.model_tbx.TabIndex = 2;
             // 
             // marka_tbx
             // 
             this.marka_tbx.Location = new System.Drawing.Point(92, 48);
             this.marka_tbx.Name = "marka_tbx";
             this.marka_tbx.Size = new System.Drawing.Size(100, 20);
-            this.marka_tbx.TabIndex = 0;
+            this.marka_tbx.TabIndex = 1;
             // 
             // bis1_gbx
             // 
@@ -238,7 +254,7 @@ namespace BiServis
             this.ran_gbx.Location = new System.Drawing.Point(287, 133);
             this.ran_gbx.Name = "ran_gbx";
             this.ran_gbx.Size = new System.Drawing.Size(224, 81);
-            this.ran_gbx.TabIndex = 1;
+            this.ran_gbx.TabIndex = 3;
             this.ran_gbx.TabStop = false;
             this.ran_gbx.Text = "Randevu";
             // 
@@ -247,7 +263,7 @@ namespace BiServis
             this.randevu_btn.Location = new System.Drawing.Point(122, 53);
             this.randevu_btn.Name = "randevu_btn";
             this.randevu_btn.Size = new System.Drawing.Size(86, 22);
-            this.randevu_btn.TabIndex = 15;
+            this.randevu_btn.TabIndex = 1;
             this.randevu_btn.Text = "RANDEVU AL";
             this.randevu_btn.UseVisualStyleBackColor = true;
             this.randevu_btn.Click += new System.EventHandler(this.randevu_btn_Click);
@@ -277,7 +293,7 @@ namespace BiServis
             this.comboBox2.Location = new System.Drawing.Point(22, 19);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(186, 21);
-            this.comboBox2.TabIndex = 1;
+            this.comboBox2.TabIndex = 0;
             // 
             // fiyat_gbx
             // 
@@ -286,7 +302,7 @@ namespace BiServis
             this.fiyat_gbx.Location = new System.Drawing.Point(287, 223);
             this.fiyat_gbx.Name = "fiyat_gbx";
             this.fiyat_gbx.Size = new System.Drawing.Size(224, 55);
-            this.fiyat_gbx.TabIndex = 2;
+            this.fiyat_gbx.TabIndex = 4;
             this.fiyat_gbx.TabStop = false;
             this.fiyat_gbx.Text = "Bakım/Onarım Ücreti";
             // 
@@ -306,34 +322,20 @@ namespace BiServis
             this.randevuList_btn.Location = new System.Drawing.Point(343, 294);
             this.randevuList_btn.Name = "randevuList_btn";
             this.randevuList_btn.Size = new System.Drawing.Size(81, 41);
-            this.randevuList_btn.TabIndex = 3;
+            this.randevuList_btn.TabIndex = 5;
             this.randevuList_btn.Text = "RANDEVU LİSTESİ";
             this.randevuList_btn.UseVisualStyleBackColor = true;
+            this.randevuList_btn.Click += new System.EventHandler(this.randevuList_btn_Click);
             // 
             // cikis_btn
             // 
             this.cikis_btn.Location = new System.Drawing.Point(430, 294);
             this.cikis_btn.Name = "cikis_btn";
             this.cikis_btn.Size = new System.Drawing.Size(81, 41);
-            this.cikis_btn.TabIndex = 4;
+            this.cikis_btn.TabIndex = 6;
             this.cikis_btn.Text = "ÇIKIŞ";
             this.cikis_btn.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(58, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "İsmi:";
-            // 
-            // isim_tbx
-            // 
-            this.isim_tbx.Location = new System.Drawing.Point(92, 22);
-            this.isim_tbx.Name = "isim_tbx";
-            this.isim_tbx.Size = new System.Drawing.Size(100, 20);
-            this.isim_tbx.TabIndex = 15;
+            this.cikis_btn.Click += new System.EventHandler(this.cikis_btn_Click);
             // 
             // Musteri
             // 
@@ -349,6 +351,7 @@ namespace BiServis
             this.Controls.Add(this.bis1_gbx);
             this.Controls.Add(this.bis_gbx);
             this.Controls.Add(this.ran_gbx);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Musteri";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -50,7 +50,7 @@ namespace BiServis
                         MessageBox.Show("Kullanıcı eklendi","Bilgi");
                         Close();
                     }
-                    con.Open();
+                    con.Close();
                 }
                 else
                 {

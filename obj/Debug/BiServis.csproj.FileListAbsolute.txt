@@ -24,3 +24,4 @@ C:\Users\armsa\Desktop\BiServis\bin\Debug\tr\BiServis.resources.dll
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.Kullanici_giris.tr.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\tr\BiServis.resources.dll
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.Musteri.resources
+C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.Randevu_list.resources

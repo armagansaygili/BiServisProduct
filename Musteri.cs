@@ -68,15 +68,17 @@ namespace BiServis
             if (con.State == ConnectionState.Closed) con.Open();
             OleDbCommand bis_ismi = new OleDbCommand("SELECT * from bisiklet where bis_isim='" + comboBox1.Text + "'", con);
             OleDbDataReader bis_ismidr = bis_ismi.ExecuteReader();
+
+            OleDbCommand ucret = new OleDbCommand("select * from onarim where ariza='" + comboBox2.Text + "'", con);
+            OleDbDataReader ucretdr = ucret.ExecuteReader();
             string tarih = dateTimePicker1.Text;
-            while (bis_ismidr.Read())
+            while (bis_ismidr.Read() && ucretdr.Read())
             {
-                
-                OleDbCommand cmd1 = new OleDbCommand("INSERT INTO randevu(bis_sahibi,bis_isim,tarih) values ('" + user_name + "','" + bis_ismidr["bis_isim"] + "','" + tarih + "')",con);
-                OleDbDataReader dr1 = cmd1.ExecuteReader();
+
+                OleDbCommand cmd2 = new OleDbCommand("INSERT INTO randevu(bis_sahibi,bis_isim,tarih,ucret,islem) values ('" + user_name + "','" + bis_ismidr["bis_isim"] + "','" + tarih + "','" + ucretdr["ariza_ucret"] + "','" + ucretdr["ariza"] + "')", con);
+                OleDbDataReader dr2 = cmd2.ExecuteReader();
 
             }
-
 
             OleDbCommand cmd = new OleDbCommand("SELECT * FROM onarim where ariza='" + comboBox2.Text + "'", con);
             OleDbDataReader dr = cmd.ExecuteReader();
@@ -87,8 +89,24 @@ namespace BiServis
                 label8.Text = "Bakım/onarım ücretiniz " + (string)dr["ariza_ucret"] + " TL'dir.";
             }
             label8.Visible = true;
-            
+
             con.Close();
+
+
+            
+        }
+     
+
+        private void randevuList_btn_Click(object sender, EventArgs e)
+        {
+            Randevu_list randevu_List = new Randevu_list();
+            randevu_List.Show();
+        }
+
+        private void cikis_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
+

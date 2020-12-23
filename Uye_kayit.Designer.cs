@@ -51,7 +51,7 @@ namespace BiServis
             this.kayit_btn.Location = new System.Drawing.Point(152, 239);
             this.kayit_btn.Name = "kayit_btn";
             this.kayit_btn.Size = new System.Drawing.Size(75, 23);
-            this.kayit_btn.TabIndex = 0;
+            this.kayit_btn.TabIndex = 6;
             this.kayit_btn.Text = "KAYIT OL";
             this.kayit_btn.UseVisualStyleBackColor = true;
             this.kayit_btn.Click += new System.EventHandler(this.kayit_btn_Click);
@@ -63,7 +63,7 @@ namespace BiServis
             this.cikis_btn.Location = new System.Drawing.Point(152, 268);
             this.cikis_btn.Name = "cikis_btn";
             this.cikis_btn.Size = new System.Drawing.Size(75, 23);
-            this.cikis_btn.TabIndex = 1;
+            this.cikis_btn.TabIndex = 7;
             this.cikis_btn.Text = "ÇIKIŞ";
             this.cikis_btn.UseVisualStyleBackColor = true;
             this.cikis_btn.Click += new System.EventHandler(this.cikis_btn_Click);
@@ -123,7 +123,7 @@ namespace BiServis
             this.userName_tbx.Location = new System.Drawing.Point(127, 29);
             this.userName_tbx.Name = "userName_tbx";
             this.userName_tbx.Size = new System.Drawing.Size(100, 20);
-            this.userName_tbx.TabIndex = 7;
+            this.userName_tbx.TabIndex = 0;
             // 
             // userPass_tbx
             // 
@@ -131,28 +131,28 @@ namespace BiServis
             this.userPass_tbx.Name = "userPass_tbx";
             this.userPass_tbx.PasswordChar = '*';
             this.userPass_tbx.Size = new System.Drawing.Size(100, 20);
-            this.userPass_tbx.TabIndex = 8;
+            this.userPass_tbx.TabIndex = 1;
             // 
             // name_tbx
             // 
             this.name_tbx.Location = new System.Drawing.Point(127, 133);
             this.name_tbx.Name = "name_tbx";
             this.name_tbx.Size = new System.Drawing.Size(100, 20);
-            this.name_tbx.TabIndex = 9;
+            this.name_tbx.TabIndex = 3;
             // 
             // lastName_tbx
             // 
             this.lastName_tbx.Location = new System.Drawing.Point(127, 170);
             this.lastName_tbx.Name = "lastName_tbx";
             this.lastName_tbx.Size = new System.Drawing.Size(100, 20);
-            this.lastName_tbx.TabIndex = 10;
+            this.lastName_tbx.TabIndex = 4;
             // 
             // mail_tbx
             // 
             this.mail_tbx.Location = new System.Drawing.Point(127, 206);
             this.mail_tbx.Name = "mail_tbx";
             this.mail_tbx.Size = new System.Drawing.Size(100, 20);
-            this.mail_tbx.TabIndex = 11;
+            this.mail_tbx.TabIndex = 5;
             // 
             // userPass1_tbx
             // 
@@ -160,7 +160,7 @@ namespace BiServis
             this.userPass1_tbx.Name = "userPass1_tbx";
             this.userPass1_tbx.PasswordChar = '*';
             this.userPass1_tbx.Size = new System.Drawing.Size(100, 20);
-            this.userPass1_tbx.TabIndex = 13;
+            this.userPass1_tbx.TabIndex = 2;
             // 
             // label6
             // 

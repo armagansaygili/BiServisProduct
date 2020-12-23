@@ -61,28 +61,28 @@ namespace BiServis
             // 
             // grs_btn
             // 
-            resources.ApplyResources(this.grs_btn, "grs_btn");
             this.grs_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.grs_btn.FlatAppearance.BorderSize = 3;
+            resources.ApplyResources(this.grs_btn, "grs_btn");
             this.grs_btn.Name = "grs_btn";
             this.grs_btn.UseVisualStyleBackColor = true;
             this.grs_btn.Click += new System.EventHandler(this.grs_btn_Click);
             // 
             // cikis_btn
             // 
-            resources.ApplyResources(this.cikis_btn, "cikis_btn");
             this.cikis_btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cikis_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cikis_btn.FlatAppearance.BorderSize = 3;
+            resources.ApplyResources(this.cikis_btn, "cikis_btn");
             this.cikis_btn.Name = "cikis_btn";
             this.cikis_btn.UseVisualStyleBackColor = true;
             this.cikis_btn.Click += new System.EventHandler(this.cikis_btn_Click);
             // 
             // button2
             // 
-            resources.ApplyResources(this.button2, "button2");
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button2.FlatAppearance.BorderSize = 3;
+            resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
