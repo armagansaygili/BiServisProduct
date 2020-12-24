@@ -25,3 +25,15 @@ C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.Kullanici_giris.tr.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\tr\BiServis.resources.dll
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.Musteri.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.Randevu_list.resources
+C:\Users\armsa\Desktop\BiServis\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.dll
+C:\Users\armsa\Desktop\BiServis\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
+C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.csproj.CopyComplete
+C:\Users\armsa\Desktop\BiServis\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+C:\Users\armsa\Desktop\BiServis\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
+C:\Users\armsa\Desktop\BiServis\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+C:\Users\armsa\Desktop\BiServis\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
+C:\Users\armsa\Desktop\BiServis\bin\Debug\Bunifu.UI.WinForms.BunifuPages.dll
+C:\Users\armsa\Desktop\BiServis\bin\Debug\Bunifu.UI.WinForms.BunifuPages.xml
+C:\Users\armsa\Desktop\BiServis\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\armsa\Desktop\BiServis\bin\Debug\Bunifu_UI_v1.5.3.xml
+C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.exe.config
