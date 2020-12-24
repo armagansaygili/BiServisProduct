@@ -22,8 +22,25 @@ namespace BiServis
         public static string user_name;
 
 
+        public void userPass_tbx_Enter(object sender, EventArgs e)
+        {
+            if (userPass_tbx.PlaceholderText == "Şifre")
+            {
+                userPass_tbx.PlaceholderText = "Şifre";
+                userPass_tbx.UseSystemPasswordChar = true;
+            }
+        }
 
-       
+        public void userPass_tbx_Leave(object sender, EventArgs e)
+        {
+            if (userPass_tbx.Text == "")
+            {
+                userPass_tbx.PlaceholderText = "Şifre";
+                userPass_tbx.UseSystemPasswordChar = false;
+            }
+        }
+
+
 
         private void uye_link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

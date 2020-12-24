@@ -31,7 +31,7 @@ namespace BiServis
             if (con.State == ConnectionState.Closed) con.Open();
             OleDbCommand cmd = new OleDbCommand("SELECT * FROM onarim",con);
             OleDbDataReader dr = cmd.ExecuteReader();
-
+            bunifuLabel1.Text = "aaaa;";
 
             while (dr.Read())
             {
@@ -47,20 +47,30 @@ namespace BiServis
                 comboBox1.Items.Add(dr1["bis_isim"]);
             }
             con.Close();
-
             
+
         }
 
-        
-        private void ekle_Click(object sender, EventArgs e)
+        private void ekle_btn_Click(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Closed) con.Open();
-            OleDbCommand cmd = new OleDbCommand("INSERT INTO bisiklet(bis_sahibi,bis_isim,bis_marka,bis_model,bis_yil,on_aktarici,arka_aktarici,fren_seti,jant_seti) values ('" + user_name + "','" + isim_tbx.Text + "','" + marka_tbx.Text + "','" 
+            OleDbCommand cmd = new OleDbCommand("INSERT INTO bisiklet(bis_sahibi,bis_isim,bis_marka,bis_model,bis_yil,on_aktarici,arka_aktarici,fren_seti,jant_seti) values ('" + user_name + "','" + isim_tbx.Text + "','" + marka_tbx.Text + "','"
                 + model_tbx.Text + "','" + yil_tbx.Text + "','" + onAk_tbx.Text + "','" + arAk_tbx.Text + "','" + fren_tbx.Text + "','" + jant_tbx.Text + "')", con);
             OleDbDataReader dr = cmd.ExecuteReader();
             MessageBox.Show("Bisiklet Eklendi.");
             comboBox1.Items.Add(isim_tbx.Text);
             con.Close();
+        }
+
+        private void randevuList_btn_Click(object sender, EventArgs e)
+        {
+            Randevu_list randevu_List = new Randevu_list();
+            randevu_List.Show();
+        }
+
+        private void cikis_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void randevu_btn_Click(object sender, EventArgs e)
@@ -80,32 +90,7 @@ namespace BiServis
 
             }
 
-            OleDbCommand cmd = new OleDbCommand("SELECT * FROM onarim where ariza='" + comboBox2.Text + "'", con);
-            OleDbDataReader dr = cmd.ExecuteReader();
-
-
-            while (dr.Read())
-            {
-                label8.Text = "Bakım/onarım ücretiniz " + (string)dr["ariza_ucret"] + " TL'dir.";
-            }
-            label8.Visible = true;
-
             con.Close();
-
-
-            
-        }
-     
-
-        private void randevuList_btn_Click(object sender, EventArgs e)
-        {
-            Randevu_list randevu_List = new Randevu_list();
-            randevu_List.Show();
-        }
-
-        private void cikis_btn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

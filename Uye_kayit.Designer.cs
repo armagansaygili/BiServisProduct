@@ -97,10 +97,10 @@ namespace BiServis
             this.userName_tbx.IconLeft = null;
             this.userName_tbx.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.userName_tbx.IconPadding = 10;
-            this.userName_tbx.IconRight = null;
+            this.userName_tbx.IconRight = ((System.Drawing.Image)(resources.GetObject("userName_tbx.IconRight")));
             this.userName_tbx.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.userName_tbx.Lines = new string[0];
-            this.userName_tbx.Location = new System.Drawing.Point(42, 68);
+            this.userName_tbx.Location = new System.Drawing.Point(42, 146);
             this.userName_tbx.MaxLength = 32767;
             this.userName_tbx.MinimumSize = new System.Drawing.Size(100, 35);
             this.userName_tbx.Modified = false;
@@ -140,7 +140,7 @@ namespace BiServis
             this.userName_tbx.TabIndex = 0;
             this.userName_tbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.userName_tbx.TextMarginBottom = 0;
-            this.userName_tbx.TextMarginLeft = 5;
+            this.userName_tbx.TextMarginLeft = 2;
             this.userName_tbx.TextMarginTop = 0;
             this.userName_tbx.TextPlaceholder = "Kullanıcı Adı";
             this.userName_tbx.UseSystemPasswordChar = false;
@@ -171,10 +171,10 @@ namespace BiServis
             this.userPass_tbx.IconLeft = null;
             this.userPass_tbx.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.userPass_tbx.IconPadding = 10;
-            this.userPass_tbx.IconRight = null;
+            this.userPass_tbx.IconRight = ((System.Drawing.Image)(resources.GetObject("userPass_tbx.IconRight")));
             this.userPass_tbx.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.userPass_tbx.Lines = new string[0];
-            this.userPass_tbx.Location = new System.Drawing.Point(42, 109);
+            this.userPass_tbx.Location = new System.Drawing.Point(42, 228);
             this.userPass_tbx.MaxLength = 32767;
             this.userPass_tbx.MinimumSize = new System.Drawing.Size(100, 35);
             this.userPass_tbx.Modified = false;
@@ -214,11 +214,13 @@ namespace BiServis
             this.userPass_tbx.TabIndex = 1;
             this.userPass_tbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.userPass_tbx.TextMarginBottom = 0;
-            this.userPass_tbx.TextMarginLeft = 5;
+            this.userPass_tbx.TextMarginLeft = 4;
             this.userPass_tbx.TextMarginTop = 0;
             this.userPass_tbx.TextPlaceholder = "Şifre";
             this.userPass_tbx.UseSystemPasswordChar = false;
             this.userPass_tbx.WordWrap = true;
+            this.userPass_tbx.Enter += new System.EventHandler(this.userPass_tbx_Enter);
+            this.userPass_tbx.Leave += new System.EventHandler(this.userPass_tbx_Leave);
             // 
             // name_tbx
             // 
@@ -245,10 +247,10 @@ namespace BiServis
             this.name_tbx.IconLeft = null;
             this.name_tbx.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.name_tbx.IconPadding = 10;
-            this.name_tbx.IconRight = null;
+            this.name_tbx.IconRight = ((System.Drawing.Image)(resources.GetObject("name_tbx.IconRight")));
             this.name_tbx.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.name_tbx.Lines = new string[0];
-            this.name_tbx.Location = new System.Drawing.Point(42, 191);
+            this.name_tbx.Location = new System.Drawing.Point(42, 64);
             this.name_tbx.MaxLength = 32767;
             this.name_tbx.MinimumSize = new System.Drawing.Size(100, 35);
             this.name_tbx.Modified = false;
@@ -285,7 +287,7 @@ namespace BiServis
             this.name_tbx.ShortcutsEnabled = true;
             this.name_tbx.Size = new System.Drawing.Size(200, 35);
             this.name_tbx.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.name_tbx.TabIndex = 3;
+            this.name_tbx.TabIndex = 0;
             this.name_tbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.name_tbx.TextMarginBottom = 0;
             this.name_tbx.TextMarginLeft = 5;
@@ -319,10 +321,10 @@ namespace BiServis
             this.lastName_tbx.IconLeft = null;
             this.lastName_tbx.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.lastName_tbx.IconPadding = 10;
-            this.lastName_tbx.IconRight = null;
+            this.lastName_tbx.IconRight = ((System.Drawing.Image)(resources.GetObject("lastName_tbx.IconRight")));
             this.lastName_tbx.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.lastName_tbx.Lines = new string[0];
-            this.lastName_tbx.Location = new System.Drawing.Point(42, 232);
+            this.lastName_tbx.Location = new System.Drawing.Point(42, 105);
             this.lastName_tbx.MaxLength = 32767;
             this.lastName_tbx.MinimumSize = new System.Drawing.Size(100, 35);
             this.lastName_tbx.Modified = false;
@@ -362,7 +364,7 @@ namespace BiServis
             this.lastName_tbx.TabIndex = 4;
             this.lastName_tbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.lastName_tbx.TextMarginBottom = 0;
-            this.lastName_tbx.TextMarginLeft = 5;
+            this.lastName_tbx.TextMarginLeft = 1;
             this.lastName_tbx.TextMarginTop = 0;
             this.lastName_tbx.TextPlaceholder = "Soyadınız";
             this.lastName_tbx.UseSystemPasswordChar = false;
@@ -393,10 +395,10 @@ namespace BiServis
             this.mail_tbx.IconLeft = null;
             this.mail_tbx.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.mail_tbx.IconPadding = 10;
-            this.mail_tbx.IconRight = null;
+            this.mail_tbx.IconRight = ((System.Drawing.Image)(resources.GetObject("mail_tbx.IconRight")));
             this.mail_tbx.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.mail_tbx.Lines = new string[0];
-            this.mail_tbx.Location = new System.Drawing.Point(42, 273);
+            this.mail_tbx.Location = new System.Drawing.Point(42, 187);
             this.mail_tbx.MaxLength = 32767;
             this.mail_tbx.MinimumSize = new System.Drawing.Size(100, 35);
             this.mail_tbx.Modified = false;
@@ -436,7 +438,7 @@ namespace BiServis
             this.mail_tbx.TabIndex = 5;
             this.mail_tbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.mail_tbx.TextMarginBottom = 0;
-            this.mail_tbx.TextMarginLeft = 5;
+            this.mail_tbx.TextMarginLeft = 3;
             this.mail_tbx.TextMarginTop = 0;
             this.mail_tbx.TextPlaceholder = "Email";
             this.mail_tbx.UseSystemPasswordChar = false;
@@ -468,17 +470,17 @@ namespace BiServis
             this.kayit_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kayit_btn.BackgroundImage")));
             this.kayit_btn.ButtonText = "Kayıt Ol";
             this.kayit_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kayit_btn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kayit_btn.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.kayit_btn.ForeColor = System.Drawing.Color.SeaGreen;
             this.kayit_btn.IdleBorderThickness = 1;
             this.kayit_btn.IdleCornerRadius = 20;
             this.kayit_btn.IdleFillColor = System.Drawing.Color.White;
             this.kayit_btn.IdleForecolor = System.Drawing.Color.LightSlateGray;
             this.kayit_btn.IdleLineColor = System.Drawing.Color.LightSlateGray;
-            this.kayit_btn.Location = new System.Drawing.Point(82, 315);
+            this.kayit_btn.Location = new System.Drawing.Point(42, 315);
             this.kayit_btn.Margin = new System.Windows.Forms.Padding(5);
             this.kayit_btn.Name = "kayit_btn";
-            this.kayit_btn.Size = new System.Drawing.Size(75, 41);
+            this.kayit_btn.Size = new System.Drawing.Size(131, 41);
             this.kayit_btn.TabIndex = 6;
             this.kayit_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.kayit_btn.Click += new System.EventHandler(this.kayit_btn_Click);
@@ -494,7 +496,7 @@ namespace BiServis
             this.cikis_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cikis_btn.BackgroundImage")));
             this.cikis_btn.ButtonText = "Çıkış";
             this.cikis_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cikis_btn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cikis_btn.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.cikis_btn.ForeColor = System.Drawing.Color.SeaGreen;
             this.cikis_btn.IdleBorderThickness = 1;
             this.cikis_btn.IdleCornerRadius = 20;
@@ -502,10 +504,10 @@ namespace BiServis
             this.cikis_btn.IdleForecolor = System.Drawing.Color.LightSlateGray;
             this.cikis_btn.IdleLineColor = System.Drawing.Color.LightSlateGray;
             this.cikis_btn.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.cikis_btn.Location = new System.Drawing.Point(167, 315);
+            this.cikis_btn.Location = new System.Drawing.Point(183, 316);
             this.cikis_btn.Margin = new System.Windows.Forms.Padding(5);
             this.cikis_btn.Name = "cikis_btn";
-            this.cikis_btn.Size = new System.Drawing.Size(75, 41);
+            this.cikis_btn.Size = new System.Drawing.Size(59, 40);
             this.cikis_btn.TabIndex = 7;
             this.cikis_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cikis_btn.Click += new System.EventHandler(this.cikis_btn_Click);
@@ -535,10 +537,10 @@ namespace BiServis
             this.userPass1_tbx.IconLeft = null;
             this.userPass1_tbx.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.userPass1_tbx.IconPadding = 10;
-            this.userPass1_tbx.IconRight = null;
+            this.userPass1_tbx.IconRight = ((System.Drawing.Image)(resources.GetObject("userPass1_tbx.IconRight")));
             this.userPass1_tbx.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.userPass1_tbx.Lines = new string[0];
-            this.userPass1_tbx.Location = new System.Drawing.Point(42, 150);
+            this.userPass1_tbx.Location = new System.Drawing.Point(42, 269);
             this.userPass1_tbx.MaxLength = 32767;
             this.userPass1_tbx.MinimumSize = new System.Drawing.Size(100, 35);
             this.userPass1_tbx.Modified = false;
@@ -583,6 +585,8 @@ namespace BiServis
             this.userPass1_tbx.TextPlaceholder = "Şifre Tekrarı";
             this.userPass1_tbx.UseSystemPasswordChar = false;
             this.userPass1_tbx.WordWrap = true;
+            this.userPass1_tbx.Enter += new System.EventHandler(this.userPass1_tbx_Enter);
+            this.userPass1_tbx.Leave += new System.EventHandler(this.userPass1_tbx_Leave);
             // 
             // Uye_kayit
             // 
@@ -590,7 +594,7 @@ namespace BiServis
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(282, 370);
+            this.ClientSize = new System.Drawing.Size(286, 370);
             this.Controls.Add(this.userPass1_tbx);
             this.Controls.Add(this.cikis_btn);
             this.Controls.Add(this.kayit_btn);

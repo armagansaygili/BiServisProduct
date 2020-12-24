@@ -18,7 +18,45 @@ namespace BiServis
             InitializeComponent();
         }
 
-        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.Oledb.12.0;Data Source=BiServis.accdb");   
+        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.Oledb.12.0;Data Source=BiServis.accdb");
+
+
+        public void userPass_tbx_Enter(object sender, EventArgs e)
+        {
+            if (userPass_tbx.PlaceholderText == "Şifre")
+            {
+                //userPass_tbx.PlaceholderText = "";
+                userPass_tbx.UseSystemPasswordChar = true;
+            }
+        }
+
+        public void userPass_tbx_Leave(object sender, EventArgs e)
+        {
+            if (userPass_tbx.Text == "")
+            {
+                userPass_tbx.PlaceholderText = "Şifre";
+                userPass_tbx.UseSystemPasswordChar = false;
+            }
+        }
+
+        public void userPass1_tbx_Enter(object sender, EventArgs e)
+        {
+            if (userPass1_tbx.PlaceholderText == "Şifre Tekrarı")
+            {
+                userPass1_tbx.PlaceholderText = "Şifre";
+                userPass1_tbx.UseSystemPasswordChar = true;
+            }
+        }
+
+        public void userPass1_tbx_Leave(object sender, EventArgs e)
+        {
+            if (userPass1_tbx.Text == "")
+            {
+                userPass1_tbx.PlaceholderText = "Şifre Tekrarı";
+                userPass1_tbx.UseSystemPasswordChar = false;
+            }
+        }
+
 
         private void kayit_btn_Click(object sender, EventArgs e)
         {
@@ -28,6 +66,7 @@ namespace BiServis
             string k_adi = name_tbx.Text;
             string k_sadi = lastName_tbx.Text;
             string mail = mail_tbx.Text;
+
 
             if ((user_name == "") || (user_pass == "") || (k_adi == "") || (k_sadi == "") || (mail == ""))
             {
@@ -68,5 +107,7 @@ namespace BiServis
         {
             Close();
         }
+
+        
     }
 }

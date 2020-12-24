@@ -108,6 +108,7 @@
     <Compile Include="Randevu_list.Designer.cs">
       <DependentUpon>Randevu_list.cs</DependentUpon>
     </Compile>
+    <Compile Include="SifreBox.cs" />
     <Compile Include="Uye_kayit.cs">
       <SubType>Form</SubType>
     </Compile>
