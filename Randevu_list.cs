@@ -25,13 +25,24 @@ namespace BiServis
 
         private void Randevu_list_Load(object sender, EventArgs e)
         {
-            OleDbDataAdapter da = new OleDbDataAdapter("select * from randevu", con);
+            OleDbDataAdapter da = new OleDbDataAdapter("select bis_isim, tarih, ucret, islem, teslim_tarihi, durum from randevu", con);
             DataSet ds = new DataSet();
             con.Open();
             da.Fill(ds, "randevu");
             dataGridView1.DataSource = ds.Tables["randevu"];
             con.Close();
-            
+
+            dataGridView1.Columns[0].HeaderText = "Bisiklet ismi";
+            dataGridView1.Columns[1].HeaderText = "Randevu tarihi";
+            dataGridView1.Columns[2].HeaderText = "Ücret";
+            dataGridView1.Columns[3].HeaderText = "İşlem";
+            dataGridView1.Columns[4].HeaderText = "Teslim tarihi";
+            dataGridView1.Columns[5].HeaderText = "Onarım";
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

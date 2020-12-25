@@ -16,7 +16,7 @@ namespace BiServis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Kullanici_giris());
+            Application.Run(new Randevu_list());
             
         }
     }
