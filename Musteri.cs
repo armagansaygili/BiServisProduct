@@ -31,7 +31,6 @@ namespace BiServis
             if (con.State == ConnectionState.Closed) con.Open();
             OleDbCommand cmd = new OleDbCommand("SELECT * FROM onarim",con);
             OleDbDataReader dr = cmd.ExecuteReader();
-            bunifuLabel1.Text = "aaaa;";
 
             while (dr.Read())
             {
@@ -65,7 +64,9 @@ namespace BiServis
         private void randevuList_btn_Click(object sender, EventArgs e)
         {
             Randevu_list randevu_List = new Randevu_list();
-            randevu_List.Show();
+            this.Refresh();
+            this.Visible = false;
+            randevu_List.ShowDialog();
         }
 
         private void cikis_btn_Click(object sender, EventArgs e)
@@ -87,6 +88,7 @@ namespace BiServis
 
                 OleDbCommand cmd2 = new OleDbCommand("INSERT INTO randevu(bis_sahibi,bis_isim,tarih,ucret,islem) values ('" + user_name + "','" + bis_ismidr["bis_isim"] + "','" + tarih + "','" + ucretdr["ariza_ucret"] + "','" + ucretdr["ariza"] + "')", con);
                 OleDbDataReader dr2 = cmd2.ExecuteReader();
+                MessageBox.Show("Randevunuz eklendi.","Bilgi");
 
             }
 

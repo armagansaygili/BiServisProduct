@@ -137,7 +137,7 @@ namespace BiServis
             this.userName_tbx.ShortcutsEnabled = true;
             this.userName_tbx.Size = new System.Drawing.Size(200, 35);
             this.userName_tbx.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.userName_tbx.TabIndex = 0;
+            this.userName_tbx.TabIndex = 2;
             this.userName_tbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.userName_tbx.TextMarginBottom = 0;
             this.userName_tbx.TextMarginLeft = 2;
@@ -211,7 +211,7 @@ namespace BiServis
             this.userPass_tbx.ShortcutsEnabled = true;
             this.userPass_tbx.Size = new System.Drawing.Size(200, 35);
             this.userPass_tbx.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.userPass_tbx.TabIndex = 1;
+            this.userPass_tbx.TabIndex = 4;
             this.userPass_tbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.userPass_tbx.TextMarginBottom = 0;
             this.userPass_tbx.TextMarginLeft = 4;
@@ -361,7 +361,7 @@ namespace BiServis
             this.lastName_tbx.ShortcutsEnabled = true;
             this.lastName_tbx.Size = new System.Drawing.Size(200, 35);
             this.lastName_tbx.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.lastName_tbx.TabIndex = 4;
+            this.lastName_tbx.TabIndex = 1;
             this.lastName_tbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.lastName_tbx.TextMarginBottom = 0;
             this.lastName_tbx.TextMarginLeft = 1;
@@ -435,7 +435,7 @@ namespace BiServis
             this.mail_tbx.ShortcutsEnabled = true;
             this.mail_tbx.Size = new System.Drawing.Size(200, 35);
             this.mail_tbx.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.mail_tbx.TabIndex = 5;
+            this.mail_tbx.TabIndex = 3;
             this.mail_tbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.mail_tbx.TextMarginBottom = 0;
             this.mail_tbx.TextMarginLeft = 3;
@@ -577,7 +577,7 @@ namespace BiServis
             this.userPass1_tbx.ShortcutsEnabled = true;
             this.userPass1_tbx.Size = new System.Drawing.Size(200, 35);
             this.userPass1_tbx.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.userPass1_tbx.TabIndex = 2;
+            this.userPass1_tbx.TabIndex = 5;
             this.userPass1_tbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.userPass1_tbx.TextMarginBottom = 0;
             this.userPass1_tbx.TextMarginLeft = 5;
