@@ -74,13 +74,7 @@ namespace BiServis
             this.InitializeComponent();
         }
 
-        private void YillikRapor_btn_Click(object sender, EventArgs e)
-        {
-            Yillik_rapor yillik_Rapor = new Yillik_rapor();
-            this.Refresh();
-            this.Visible = false;
-            yillik_Rapor.ShowDialog();
-        }
+       
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
