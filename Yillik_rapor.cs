@@ -26,6 +26,14 @@ namespace BiServis
             if (con.State == ConnectionState.Closed) con.Open();
             OleDbCommand cmd1 = new OleDbCommand("SELECT * from bisiklet where bis_sahibi='" + user_name + "'", con);
             OleDbDataReader dr1 = cmd1.ExecuteReader();
+            OleDbDataAdapter da_acilis = new OleDbDataAdapter("select tarih,islem, ucret from randevu where bis_sahibi='" + user_name + "'", con);
+            DataSet ds = new DataSet();
+            da_acilis.Fill(ds, "randevu");
+            dataGridView1.DataSource = ds.Tables["randevu"];
+            
+
+            comboBox1.Items.Add("Tümü");
+
             while (dr1.Read())
             {
                 comboBox1.Items.Add(dr1["bis_isim"]);
@@ -39,6 +47,33 @@ namespace BiServis
             Randevu_list randevu_List = new Randevu_list();
             Close();
             randevu_List.Visible = true;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            
+            if (comboBox1.Text == "Tümü")
+            {
+                OleDbDataAdapter da = new OleDbDataAdapter("select tarih,islem, ucret from randevu where bis_sahibi='" + user_name + "'", con);
+                DataSet ds = new DataSet();
+                con.Open();
+                da.Fill(ds, "randevu");
+                dataGridView1.DataSource = ds.Tables["randevu"];
+                con.Close();
+            }
+            else
+            {
+                OleDbDataAdapter da = new OleDbDataAdapter("select tarih,islem, ucret from randevu where bis_sahibi='" + user_name + "' AND bis_isim ='" + comboBox1.Text + "'", con);
+                DataSet ds = new DataSet();
+                con.Open();
+                da.Fill(ds, "randevu");
+                dataGridView1.DataSource = ds.Tables["randevu"];
+                con.Close();
+            }
+
+
+            
         }
     }
 }
