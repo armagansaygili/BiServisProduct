@@ -82,6 +82,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MsgBisEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBisEkle.Designer.cs">
+      <DependentUpon>MsgBisEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBox.Designer.cs">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgRandevu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgRandevu.Designer.cs">
+      <DependentUpon>MsgRandevu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgRanduvuSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgRanduvuSil.Designer.cs">
+      <DependentUpon>MsgRanduvuSil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Musteri.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +138,18 @@
     <Compile Include="Uye_kayit.Designer.cs">
       <DependentUpon>Uye_kayit.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MsgBisEkle.resx">
+      <DependentUpon>MsgBisEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBox.resx">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgRandevu.resx">
+      <DependentUpon>MsgRandevu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgRanduvuSil.resx">
+      <DependentUpon>MsgRanduvuSil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Musteri.resx">
       <DependentUpon>Musteri.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,12 +194,6 @@
       <ProductName>.NET Framework 3.5 SP1 </ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\password-icon.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\user.png" />

@@ -56,9 +56,12 @@ namespace BiServis
             OleDbCommand cmd = new OleDbCommand("INSERT INTO bisiklet(bis_sahibi,bis_isim,bis_marka,bis_model,bis_yil,on_aktarici,arka_aktarici,fren_seti,jant_seti) values ('" + user_name + "','" + isim_tbx.Text + "','" + marka_tbx.Text + "','"
                 + model_tbx.Text + "','" + yil_tbx.Text + "','" + onAk_tbx.Text + "','" + arAk_tbx.Text + "','" + fren_tbx.Text + "','" + jant_tbx.Text + "')", con);
             OleDbDataReader dr = cmd.ExecuteReader();
-            MessageBox.Show("Bisiklet Eklendi.");
+            
             comboBox1.Items.Add(isim_tbx.Text);
             con.Close();
+
+            MsgBisEkle msgBisEkle = new MsgBisEkle();
+            msgBisEkle.Show();
         }
 
         private void randevuList_btn_Click(object sender, EventArgs e)
@@ -88,7 +91,8 @@ namespace BiServis
 
                 OleDbCommand cmd2 = new OleDbCommand("INSERT INTO randevu(bis_sahibi,bis_isim,tarih,ucret,islem) values ('" + user_name + "','" + bis_ismidr["bis_isim"] + "','" + tarih + "','" + ucretdr["ariza_ucret"] + "','" + ucretdr["ariza"] + "')", con);
                 OleDbDataReader dr2 = cmd2.ExecuteReader();
-                MessageBox.Show("Randevunuz eklendi.","Bilgi");
+                MsgRandevu msgRandevu = new MsgRandevu();
+                msgRandevu.Show();
 
             }
            

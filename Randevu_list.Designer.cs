@@ -46,7 +46,6 @@ namespace BiServis
             this.toplam_lbl = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.toplam_harcama = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.randevu_sayisi = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.cikis_btn = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.randevuList_gbx.SuspendLayout();
@@ -254,13 +253,6 @@ namespace BiServis
             this.randevu_sayisi.TabIndex = 24;
             this.randevu_sayisi.Text = "İşlem Sayısı:";
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = null;
-            this.bunifuDragControl1.Vertical = true;
-            // 
             // cikis_btn
             // 
             this.cikis_btn.ActiveBorderThickness = 1;
@@ -316,7 +308,6 @@ namespace BiServis
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox randevuList_gbx;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
         private Bunifu.Framework.UI.BunifuCustomLabel randevu_lbl;
         private Bunifu.Framework.UI.BunifuCustomLabel toplam_lbl;

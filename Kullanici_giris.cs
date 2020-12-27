@@ -66,7 +66,8 @@ namespace BiServis
             }
             else
             {
-                MessageBox.Show("Kullanıcı adı veya şifre yanlış", "Bilgi");
+                MsgBox msgBox = new MsgBox();
+                msgBox.Show();                
             }
             con.Close();
         }

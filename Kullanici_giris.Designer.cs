@@ -55,12 +55,12 @@ namespace BiServis
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.BackColor = System.Drawing.Color.Empty;
             this.bunifuLabel1.CursorType = null;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bunifuLabel1.Font = new System.Drawing.Font("Cambria", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bunifuLabel1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.bunifuLabel1.Location = new System.Drawing.Point(49, 3);
+            this.bunifuLabel1.Location = new System.Drawing.Point(51, 3);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(146, 41);
+            this.bunifuLabel1.Size = new System.Drawing.Size(139, 40);
             this.bunifuLabel1.TabIndex = 7;
             this.bunifuLabel1.Text = "Giriş Yap";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;

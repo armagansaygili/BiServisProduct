@@ -138,7 +138,10 @@ namespace BiServis
 
                 OleDbCommand cmd1 = new OleDbCommand("DELETE * from randevu where randevu_id=" + dataGridView1.SelectedRows[i].Cells["randevu_id"].Value + "", con);
                 OleDbDataReader dr1 = cmd1.ExecuteReader();
-                MessageBox.Show("Randevu iptal edildi.");
+
+                MsgRanduvuSil msgRandevuSil = new MsgRanduvuSil();
+                msgRandevuSil.Show();
+
                 Datagetir();
             }
 
