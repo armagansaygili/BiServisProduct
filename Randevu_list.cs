@@ -171,10 +171,13 @@ namespace BiServis
         {
             StringFormat st = new StringFormat();
             st.Alignment = StringAlignment.Near;
+
+            DateTime bugun = DateTime.Now;
             e.Graphics.DrawString("BiServis",Baslik,sb,350,100,st);
+            e.Graphics.DrawString(bugun.ToLongDateString(), Icerik, sb, 563, 107, st);
 
             e.Graphics.DrawString("--------------------------------------------------------------", altBaslik, sb, 350, 120, st);
-            e.Graphics.DrawString("Tarih                              Bisiklet ismi                 Yapılan İşlem              İşlem Ücreti", altBaslik,sb,150,250,st);
+            e.Graphics.DrawString("Tarih                              Bisiklet ismi                Yapılan İşlem              İşlem Ücreti", altBaslik,sb,150,250,st);
             e.Graphics.DrawString("--------------------------------------------------------------------------------------------------", altBaslik, sb, 150, 280, st);
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
