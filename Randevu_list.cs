@@ -155,6 +155,43 @@ namespace BiServis
             Musteri musteri = new Musteri();
             Close();
             musteri.Visible = true;
-        }        
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.ShowDialog();
+        }
+
+        Font Baslik = new Font("Cambria", 15, FontStyle.Bold);
+        Font altBaslik = new Font("Cambria", 12, FontStyle.Regular);
+        Font Icerik = new Font("Cambria", 10);
+        SolidBrush sb = new SolidBrush(Color.Black);
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            StringFormat st = new StringFormat();
+            st.Alignment = StringAlignment.Near;
+            e.Graphics.DrawString("BiServis",Baslik,sb,350,100,st);
+
+            e.Graphics.DrawString("--------------------------------------------------------------", altBaslik, sb, 350, 120, st);
+            e.Graphics.DrawString("Tarih                              Bisiklet ismi                 Yapılan İşlem              İşlem Ücreti", altBaslik,sb,150,250,st);
+            e.Graphics.DrawString("--------------------------------------------------------------------------------------------------", altBaslik, sb, 150, 280, st);
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                e.Graphics.DrawString(dataGridView1.Rows[i].Cells[2].Value.ToString(), Icerik, sb, 150, 300 + i * 30, st);
+                e.Graphics.DrawString(dataGridView1.Rows[i].Cells[1].Value.ToString(), Icerik, sb, 300, 300 + i * 30, st);
+                e.Graphics.DrawString(dataGridView1.Rows[i].Cells[3].Value.ToString(), Icerik, sb, 450, 300 + i * 30, st);
+                e.Graphics.DrawString(dataGridView1.Rows[i].Cells[4].Value.ToString(), Icerik, sb, 600, 300 + i * 30, st);
+            }
+
+
+            e.Graphics.DrawString("--------------------------------------------------------------------------------------------------", altBaslik, sb, 150, 300 + 30 * dataGridView1.Rows.Count, st);
+            e.Graphics.DrawString("Toplam Harcamanız: " + toplam_lbl.Text, Icerik, sb, 450, 300 + 30 * (dataGridView1.Rows.Count + 1), st);
+            
+
+
+
+        }
     }
 }
