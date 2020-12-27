@@ -55,13 +55,7 @@ namespace BiServis
             randevu_lbl.Visible = true;
         }
 
-        public Randevu_list()
-        {
-            InitializeComponent();
-        }
-
-        
-        private void Randevu_list_Load(object sender, EventArgs e)
+        public void Bisiklet_secim()
         {
             if (con.State == ConnectionState.Closed) con.Open();
             OleDbCommand cmd1 = new OleDbCommand("SELECT * from bisiklet where bis_sahibi='" + user_name + "'", con);
@@ -74,9 +68,11 @@ namespace BiServis
             }
             con.Close();
 
+            comboBox1.SelectedIndex = 0;
+        }
 
-            Datagetir();
-
+        public void Datagrid_ayar()
+        {
             dataGridView1.Columns[0].HeaderText = "Randevu Numarası";
             dataGridView1.Columns[1].HeaderText = "Bisiklet İsmi";
             dataGridView1.Columns[2].HeaderText = "Randevu Tarihi";
@@ -85,15 +81,31 @@ namespace BiServis
             dataGridView1.Columns[5].HeaderText = "Teslim Tarihi";
             dataGridView1.Columns[6].HeaderText = "Onarım Durumu";
 
+            Font HeaderCellFont = new Font("Cambria", 10, FontStyle.Bold);
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
+            {
+                dataGridView1.Columns[i].HeaderCell.Style.Font = HeaderCellFont;
+            }                      
 
-            dataGridView1.Columns[0].HeaderCell.Style.Font = new Font("Cambria", 10, FontStyle.Bold);
-            dataGridView1.Columns[1].HeaderCell.Style.Font = new Font("Cambria", 10, FontStyle.Bold);
-            dataGridView1.Columns[2].HeaderCell.Style.Font = new Font("Cambria", 10, FontStyle.Bold);
-            dataGridView1.Columns[3].HeaderCell.Style.Font = new Font("Cambria", 10, FontStyle.Bold);
-            dataGridView1.Columns[4].HeaderCell.Style.Font = new Font("Cambria", 10, FontStyle.Bold);
-            dataGridView1.Columns[5].HeaderCell.Style.Font = new Font("Cambria", 10, FontStyle.Bold);
-            dataGridView1.Columns[6].HeaderCell.Style.Font = new Font("Cambria", 10, FontStyle.Bold);
             dataGridView1.DefaultCellStyle.Font = new Font("Cambria", 10, FontStyle.Regular);
+        }
+
+
+        public Randevu_list()
+        {
+            InitializeComponent();
+        }
+
+        
+        private void Randevu_list_Load(object sender, EventArgs e)
+        {
+
+
+            Bisiklet_secim();
+            Datagrid_ayar();
+            Datagetir();
+            
+            
         }       
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,7 +117,7 @@ namespace BiServis
             }
             else
             {
-                OleDbDataAdapter da = new OleDbDataAdapter("select bis_isim, tarih,islem, ucret, teslim_tarihi, durum from randevu where bis_sahibi='" + user_name + "' AND bis_isim ='" + comboBox1.Text + "'", con);
+                OleDbDataAdapter da = new OleDbDataAdapter("select randevu_id,bis_isim, tarih,islem, ucret, teslim_tarihi, durum from randevu where bis_sahibi='" + user_name + "' AND bis_isim ='" + comboBox1.Text + "'", con);
                 DataSet ds = new DataSet();
                 con.Open();
                 da.Fill(ds, "randevu");
@@ -131,6 +143,7 @@ namespace BiServis
             }
 
             Hesapla();
+            
 
         }
 
@@ -139,10 +152,6 @@ namespace BiServis
             Musteri musteri = new Musteri();
             Close();
             musteri.Visible = true;
-        }
-
-        
+        }        
     }
-
-    
 }

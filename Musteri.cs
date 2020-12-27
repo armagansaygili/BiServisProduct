@@ -83,7 +83,7 @@ namespace BiServis
             OleDbCommand ucret = new OleDbCommand("select * from onarim where ariza='" + comboBox2.Text + "'", con);
             OleDbDataReader ucretdr = ucret.ExecuteReader();
             string tarih = dateTimePicker1.Text;
-            if (bis_ismidr.Read() && ucretdr.Read())
+            while (bis_ismidr.Read() && ucretdr.Read())
             {
 
                 OleDbCommand cmd2 = new OleDbCommand("INSERT INTO randevu(bis_sahibi,bis_isim,tarih,ucret,islem) values ('" + user_name + "','" + bis_ismidr["bis_isim"] + "','" + tarih + "','" + ucretdr["ariza_ucret"] + "','" + ucretdr["ariza"] + "')", con);
@@ -91,13 +91,12 @@ namespace BiServis
                 MessageBox.Show("Randevunuz eklendi.","Bilgi");
 
             }
-            else
-            {
-                MessageBox.Show("Hata");
-            }
+           
 
             con.Close();
         }
+
+        
     }
 }
 
