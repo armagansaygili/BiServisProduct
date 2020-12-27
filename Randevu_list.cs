@@ -157,7 +157,7 @@ namespace BiServis
             musteri.Visible = true;
         }
 
-        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        private void yillik_Rapor_Click(object sender, EventArgs e)
         {
             printPreviewDialog1.ShowDialog();
         }
