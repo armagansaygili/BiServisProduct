@@ -41,3 +41,7 @@ C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgBox.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgBisEkle.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgRandevu.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgRanduvuSil.resources
+C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.Form1.resources
+C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgKullaniciEkle.resources
+C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgKullaniciKullaniliyor.resources
+C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgYanlis.resources

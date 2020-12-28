@@ -70,7 +70,8 @@ namespace BiServis
 
             if ((user_name == "") || (user_pass == "") || (k_adi == "") || (k_sadi == "") || (mail == ""))
             {
-                MessageBox.Show("Lütfen tüm alanları doldurunuz.");
+                Form1 form = new Form1();
+                form.Show();
             }
             else
             {
@@ -82,22 +83,27 @@ namespace BiServis
                     OleDbDataReader reader = sorgu.ExecuteReader();
                     if (reader.Read())
                     {
-                        MessageBox.Show("Kullanıcı adı kullanılıyor.");
+
+                        MsgKullaniciKullaniliyor msgKullaniciKullaniliyor = new MsgKullaniciKullaniliyor();
+                        msgKullaniciKullaniliyor.Show();
+                        
                     }
                     else
                     {
                         sorgu = new OleDbCommand("INSERT INTO kullanici(user_name,user_pass,kullanici_ad,kullanici_sad,kullanici_mail) values ('" + user_name + "','" + user_pass + "','" + k_adi + "','" + k_sadi + "','" + mail + "')", con);
                         OleDbDataReader dr = sorgu.ExecuteReader();
-                        MessageBox.Show("Kullanıcı eklendi", "Bilgi");
+                        MsgKullaniciEkle msgKullaniciEkle = new MsgKullaniciEkle();
+                        msgKullaniciEkle.Show();
                         Close();
                     }
                     con.Close();
                 }
                 else
                 {
+                    MsgYanlis msgYanlis = new MsgYanlis();
+                    msgYanlis.Show();
 
-
-                    MessageBox.Show("Girdiğiniz şifreler uyuşmuyor veya mail adresiniz yanlış girilmiş.");
+                  
 
                 }
             }

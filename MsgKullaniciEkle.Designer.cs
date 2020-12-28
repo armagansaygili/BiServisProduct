@@ -1,7 +1,7 @@
 ﻿
 namespace BiServis
 {
-    partial class MsgRandevu
+    partial class MsgKullaniciEkle
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,9 @@ namespace BiServis
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MsgRandevu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MsgKullaniciEkle));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.tamamBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -43,6 +44,11 @@ namespace BiServis
             this.bunifuElipse1.ElipseRadius = 20;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 20;
+            this.bunifuElipse2.TargetControl = this;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -51,7 +57,7 @@ namespace BiServis
             this.panel1.Location = new System.Drawing.Point(0, 85);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(228, 39);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 1;
             // 
             // tamamBtn
             // 
@@ -84,13 +90,13 @@ namespace BiServis
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Cambria", 10F);
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(52, 38);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(63, 38);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(135, 16);
-            this.bunifuCustomLabel1.TabIndex = 3;
-            this.bunifuCustomLabel1.Text = "Randevunuz eklendi.";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(113, 16);
+            this.bunifuCustomLabel1.TabIndex = 2;
+            this.bunifuCustomLabel1.Text = "Kullanıcı eklendi.";
             // 
-            // MsgRandevu
+            // MsgKullaniciEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,9 +105,9 @@ namespace BiServis
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MsgRandevu";
+            this.Name = "MsgKullaniciEkle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MsgRandevu";
+            this.Text = "MsgKullaniciEkle";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -111,6 +117,7 @@ namespace BiServis
         #endregion
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuThinButton2 tamamBtn;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
