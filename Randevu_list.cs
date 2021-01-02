@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.OleDb;
-using System.Threading;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace BiServis
-{   
-    
+{
+
     public partial class Randevu_list : Form
     {
 
@@ -80,7 +74,7 @@ namespace BiServis
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
             {
                 dataGridView1.Columns[i].HeaderCell.Style.Font = HeaderCellFont;
-            }                      
+            }
 
             dataGridView1.DefaultCellStyle.Font = new Font("Cambria", 10, FontStyle.Regular);
         }
@@ -91,17 +85,17 @@ namespace BiServis
             InitializeComponent();
         }
 
-        
+
         private void Randevu_list_Load(object sender, EventArgs e)
         {
             Bisiklet_secim();
             Datagrid_ayar();
             Datagetir();
             comboBox2.Visible = false;
-            
-            
-            
-        }       
+
+
+
+        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -118,7 +112,7 @@ namespace BiServis
                 {
                     comboBox2.Items.Add(dr["randevu_id"]);
                 }
-                
+
                 con.Close();
             }
             else
@@ -131,18 +125,18 @@ namespace BiServis
                 dataGridView1.DataSource = ds.Tables["randevu"];
 
                 comboBox2.Items.Clear();
-                OleDbCommand cmd = new OleDbCommand("select randevu_id from randevu where bis_isim='"+comboBox1.Text+"'", con);
+                OleDbCommand cmd = new OleDbCommand("select randevu_id from randevu where bis_isim='" + comboBox1.Text + "'", con);
                 OleDbDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
                 {
                     comboBox2.Items.Add(dr["randevu_id"]);
                 }
-               
+
                 con.Close();
             }
 
-                       
+
 
         }
 
@@ -165,7 +159,7 @@ namespace BiServis
             }
 
             //Hesapla();
-            
+
 
         }
 
@@ -224,8 +218,9 @@ namespace BiServis
 
 
             }
-            else {
-                OleDbCommand cmd1 = new OleDbCommand("Select sum(bakim_ucret) from randevu_bakim where bis_sahibi='" + user_name + "' AND bis_ismi='" +comboBox1.Text + "'", con);
+            else
+            {
+                OleDbCommand cmd1 = new OleDbCommand("Select sum(bakim_ucret) from randevu_bakim where bis_sahibi='" + user_name + "' AND bis_ismi='" + comboBox1.Text + "'", con);
                 toplam1 = cmd1.ExecuteScalar().ToString();
             }
             con.Close();
@@ -233,7 +228,7 @@ namespace BiServis
 
             e.Graphics.DrawString("--------------------------------------------------------------------------------------------------", altBaslik, sb, 150, 300 + 30 * dataGridView1.Rows.Count, st);
             e.Graphics.DrawString("Toplam Harcamanız: " + toplam1 + " TL", Icerik, sb, 520, 300 + 30 * (dataGridView1.Rows.Count + 1), st);
-            
+
 
 
 
@@ -243,13 +238,13 @@ namespace BiServis
         {
 
             deger = Convert.ToInt32(dataGridView1.CurrentRow.Cells["randevu_id"].Value);
-            
+
 
 
             Rapor rapor = new Rapor();
             rapor.Show();
 
-            
+
         }
     }
 }

@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace BiServis
 {
@@ -29,7 +24,7 @@ namespace BiServis
         private void Musteri_Load(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Closed) con.Open();
-            OleDbCommand cmd = new OleDbCommand("SELECT * FROM onarim",con);
+            OleDbCommand cmd = new OleDbCommand("SELECT * FROM onarim", con);
             OleDbDataReader dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -58,7 +53,7 @@ namespace BiServis
             OleDbCommand cmd = new OleDbCommand("INSERT INTO bisiklet(bis_sahibi,bis_isim,bis_marka,bis_model,bis_yil,on_aktarici,arka_aktarici,fren_seti,jant_seti) values ('" + user_name + "','" + isim_tbx.Text + "','" + marka_tbx.Text + "','"
                 + model_tbx.Text + "','" + yil_tbx.Text + "','" + onAk_tbx.Text + "','" + arAk_tbx.Text + "','" + fren_tbx.Text + "','" + jant_tbx.Text + "')", con);
             OleDbDataReader dr = cmd.ExecuteReader();
-            
+
             comboBox1.Items.Add(isim_tbx.Text);
             con.Close();
 
@@ -85,9 +80,9 @@ namespace BiServis
             OleDbCommand bis_ismi = new OleDbCommand("SELECT * from bisiklet where bis_isim='" + comboBox1.Text + "'", con);
             OleDbDataReader bis_ismidr = bis_ismi.ExecuteReader();
 
-           
-            
-            
+
+
+
 
             string tarih = dateTimePicker1.Text;
             while (bis_ismidr.Read())
@@ -109,18 +104,18 @@ namespace BiServis
                     while (ucretdr.Read() && randevu_iddr.Read())
                     {
 
-                        OleDbCommand cmd3 = new OleDbCommand("INSERT INTO randevu_bakim(randevu_id,bis_sahibi,bis_ismi,bakim,bakim_ucret) values ('" + randevu_iddr["randevu_id1"] + "','"+ user_name+"','" + comboBox1.Text + "','" + checkedListBox1.CheckedItems[i] + "','" + ucretdr["ariza_ucret"] + "')", con);
+                        OleDbCommand cmd3 = new OleDbCommand("INSERT INTO randevu_bakim(randevu_id,bis_sahibi,bis_ismi,bakim,bakim_ucret) values ('" + randevu_iddr["randevu_id1"] + "','" + user_name + "','" + comboBox1.Text + "','" + checkedListBox1.CheckedItems[i] + "','" + ucretdr["ariza_ucret"] + "')", con);
                         OleDbDataReader dr3 = cmd3.ExecuteReader();
 
-                       
+
                     }
 
-                     
+
                 }
-                   
+
                 MsgRandevu msgRandevu = new MsgRandevu();
                 msgRandevu.Show();
-                
+
             }
 
 

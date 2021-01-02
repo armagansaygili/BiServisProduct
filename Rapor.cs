@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BiServis
@@ -19,7 +14,7 @@ namespace BiServis
         }
 
 
-       
+
 
         private void randevuSil_btn_Click(object sender, EventArgs e)
         {
@@ -29,7 +24,7 @@ namespace BiServis
         string user_name = Kullanici_giris.user_name;
         int r_id = Randevu_list.deger;
 
-        
+
         private void Rapor_Load(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Closed) con.Open();
