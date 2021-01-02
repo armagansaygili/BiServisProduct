@@ -82,11 +82,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="MsgAlanDoldur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MsgAlanDoldur.Designer.cs">
+      <DependentUpon>MsgAlanDoldur.cs</DependentUpon>
     </Compile>
     <Compile Include="MsgBisEkle.cs">
       <SubType>Form</SubType>
@@ -156,14 +156,20 @@
     <Compile Include="Randevu_list.Designer.cs">
       <DependentUpon>Randevu_list.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rapor.Designer.cs">
+      <DependentUpon>Rapor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Uye_kayit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Uye_kayit.Designer.cs">
       <DependentUpon>Uye_kayit.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MsgAlanDoldur.resx">
+      <DependentUpon>MsgAlanDoldur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MsgBisEkle.resx">
       <DependentUpon>MsgBisEkle.cs</DependentUpon>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Randevu_list.resx">
       <DependentUpon>Randevu_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapor.resx">
+      <DependentUpon>Rapor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Uye_kayit.resx">
       <DependentUpon>Uye_kayit.cs</DependentUpon>

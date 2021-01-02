@@ -41,7 +41,44 @@ C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgBox.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgBisEkle.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgRandevu.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgRanduvuSil.resources
-C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.Form1.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgKullaniciEkle.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgKullaniciKullaniliyor.resources
 C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgYanlis.resources
+C:\Users\armsa\Desktop\BiServis\obj\Debug\BiServis.MsgAlanDoldur.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.csprojAssemblyReference.cache
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.exe.config
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.MsgAlanDoldur.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.MsgBisEkle.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.MsgBox.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.MsgKullaniciEkle.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.MsgKullaniciKullaniliyor.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.MsgRandevu.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.MsgRanduvuSil.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.MsgYanlis.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.Musteri.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.Kullanici_giris.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.Properties.Resources.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.Randevu_list.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.Uye_kayit.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.Kullanici_giris.tr.resources
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.csproj.GenerateResource.cache
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.csproj.CoreCompileInputs.cache
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.exe
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.pdb
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\BiServis.exe.config
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\BiServis.exe
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\BiServis.pdb
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\tr\BiServis.resources.dll
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\Bunifu.UI.WinForms.BunifuPages.dll
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.dll
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\Bunifu.UI.WinForms.BunifuPages.xml
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
+C:\Users\armsa\Desktop\BiServis - Kopya\bin\Debug\Bunifu_UI_v1.5.3.xml
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\tr\BiServis.resources.dll
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.csproj.CopyComplete
+C:\Users\armsa\Desktop\BiServis - Kopya\obj\Debug\BiServis.Rapor.resources

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BiServis
 {
-    public partial class Form1 : Form
+    public partial class MsgAlanDoldur : Form
     {
-        public Form1()
+        public MsgAlanDoldur()
         {
             InitializeComponent();
         }

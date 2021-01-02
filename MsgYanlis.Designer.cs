@@ -100,7 +100,9 @@ namespace BiServis
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MsgYanlis";
+            this.ShowIcon = false;
             this.Text = "MsgYanlis";
+            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

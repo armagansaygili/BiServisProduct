@@ -9,6 +9,6 @@
     <ErrorReportUrlHistory />
     <FallbackCulture>tr-TR</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>

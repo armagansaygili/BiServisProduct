@@ -312,7 +312,6 @@ namespace BiServis
             this.MinimizeBox = false;
             this.Name = "Kullanici_giris";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BiServis";

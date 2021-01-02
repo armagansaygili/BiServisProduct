@@ -70,7 +70,7 @@ namespace BiServis
 
             if ((user_name == "") || (user_pass == "") || (k_adi == "") || (k_sadi == "") || (mail == ""))
             {
-                Form1 form = new Form1();
+                MsgAlanDoldur form = new MsgAlanDoldur();
                 form.Show();
             }
             else

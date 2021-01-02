@@ -1,7 +1,7 @@
 ﻿
 namespace BiServis
 {
-    partial class Form1
+    partial class MsgAlanDoldur
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace BiServis
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MsgAlanDoldur));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.tamamBtn = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -90,7 +90,7 @@ namespace BiServis
             this.bunifuCustomLabel1.TabIndex = 4;
             this.bunifuCustomLabel1.Text = "Lütfen tüm alanları doldurunuz.";
             // 
-            // Form1
+            // MsgAlanDoldur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,9 +99,11 @@ namespace BiServis
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "MsgAlanDoldur";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
