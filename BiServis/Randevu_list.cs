@@ -3,59 +3,42 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace BiServis
 {
 
     public partial class Randevu_list : Form
     {
-
-        OleDbConnection con = new OleDbConnection("Provider = Microsoft.ACE.Oledb.12.0;Data Source=BiServis.accdb");
         string user_name = Kullanici_giris.user_name;
         int r_id = Randevu_list.deger;
-
+        sqlcon con = new sqlcon();
+        MySqlCommand cmd = new MySqlCommand();
         public void Datagetir()
         {
 
-            if (con.State == ConnectionState.Closed) con.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("select randevu_id,bis_isim, tarih, teslim_tarihi, durum from randevu where bis_sahibi='" + user_name + "'", con.baglan());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
 
-            string user_name = Kullanici_giris.user_name;
-
-            OleDbDataAdapter da = new OleDbDataAdapter("select randevu_id,bis_isim, tarih, teslim_tarihi, durum from randevu where bis_sahibi='" + user_name + "'", con);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "randevu");
-            dataGridView1.DataSource = ds.Tables["randevu"];
-            con.Close();
 
         }
 
-        //public int Hesapla()
-        //{
-        //    if (con.State == ConnectionState.Closed) con.Open();
-        //    OleDbCommand cmd1 = new OleDbCommand("SELECT bakim_ucret from randevu_bakim where randevu_id=" + r_id + "", con);
-        //    OleDbDataReader dr1 = cmd1.ExecuteReader();
-        //    int toplam = 0;
-        //    for (int i = 0; i < dataGridView1.Rows.Count; ++i)
-        //    {
-        //        toplam += Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value);
-        //    }
-        //    con.Close();
-
-        //    return toplam;
-        //}
 
         public void Bisiklet_secim()
         {
-            if (con.State == ConnectionState.Closed) con.Open();
-            OleDbCommand cmd1 = new OleDbCommand("SELECT * from bisiklet where bis_sahibi='" + user_name + "'", con);
-            OleDbDataReader dr1 = cmd1.ExecuteReader();
+            cmd.Connection = con.baglan();
+            cmd.CommandText = "SELECT * from bisiklet where bis_sahibi='" + user_name + "'";
+            MySqlDataReader dr = cmd.ExecuteReader();
             comboBox1.Items.Add("Tümü");
 
-            while (dr1.Read())
+            while (dr.Read())
             {
-                comboBox1.Items.Add(dr1["bis_isim"]);
+                comboBox1.Items.Add(dr["bis_isim"]);
             }
-            con.Close();
+            dr.Close();
 
             comboBox1.SelectedIndex = 0;
         }
@@ -65,8 +48,6 @@ namespace BiServis
             dataGridView1.Columns[0].HeaderText = "Randevu Numarası";
             dataGridView1.Columns[1].HeaderText = "Bisiklet İsmi";
             dataGridView1.Columns[2].HeaderText = "Randevu Tarihi";
-            //dataGridView1.Columns[3].HeaderText = "Yapılan İşlem";
-            //dataGridView1.Columns[4].HeaderText = "İşlem Ücreti";
             dataGridView1.Columns[3].HeaderText = "Teslim Tarihi";
             dataGridView1.Columns[4].HeaderText = "Onarım Durumu";
 
@@ -103,37 +84,36 @@ namespace BiServis
             if (comboBox1.Text == "Tümü")
             {
                 Datagetir();
-                if (con.State == ConnectionState.Closed) con.Open();
 
-                OleDbCommand cmd = new OleDbCommand("select randevu_id from randevu", con);
-                OleDbDataReader dr = cmd.ExecuteReader();
+                cmd.Connection = con.baglan();
+                cmd.CommandText = "select randevu_id from randevu";                
+                MySqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
                 {
                     comboBox2.Items.Add(dr["randevu_id"]);
                 }
-
-                con.Close();
+                dr.Close();
+             
             }
             else
             {
-                OleDbDataAdapter da = new OleDbDataAdapter("select randevu_id,bis_isim, tarih, teslim_tarihi, durum from randevu where bis_sahibi='" + user_name + "' AND bis_isim ='" + comboBox1.Text + "'", con);
-                DataSet ds = new DataSet();
-                if (con.State == ConnectionState.Closed) con.Open();
-
-                da.Fill(ds, "randevu");
-                dataGridView1.DataSource = ds.Tables["randevu"];
+                MySqlDataAdapter da = new MySqlDataAdapter("select randevu_id,bis_isim, tarih, teslim_tarihi, durum from randevu where bis_sahibi='" + user_name + "' AND bis_isim ='" + comboBox1.Text + "'", con.baglan());
+                DataTable ds = new DataTable();
+                da.Fill(ds);
+                dataGridView1.DataSource = ds;
 
                 comboBox2.Items.Clear();
-                OleDbCommand cmd = new OleDbCommand("select randevu_id from randevu where bis_isim='" + comboBox1.Text + "'", con);
-                OleDbDataReader dr = cmd.ExecuteReader();
+
+                cmd.Connection = con.baglan();
+                cmd.CommandText = "select randevu_id from randevu where bis_isim='" + comboBox1.Text + "'";
+                MySqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
                 {
                     comboBox2.Items.Add(dr["randevu_id"]);
                 }
-
-                con.Close();
+                dr.Close();
             }
 
 
@@ -145,21 +125,21 @@ namespace BiServis
         {
             for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
             {
-                if (con.State == ConnectionState.Closed) con.Open();
 
-                OleDbCommand cmd1 = new OleDbCommand("DELETE * from randevu where randevu_id=" + dataGridView1.SelectedRows[i].Cells["randevu_id"].Value + "", con);
-                OleDbCommand cmd2 = new OleDbCommand("DELETE * from randevu_bakim where randevu_id=" + dataGridView1.SelectedRows[i].Cells["randevu_id"].Value + "", con);
-
-                OleDbDataReader dr1 = cmd1.ExecuteReader();
-                OleDbDataReader dr2 = cmd2.ExecuteReader();
+                cmd.Connection = con.baglan();
+                cmd.CommandText = "DELETE from randevu where randevu_id=" + dataGridView1.SelectedRows[i].Cells["randevu_id"].Value + "";
+                MySqlDataReader dr = cmd.ExecuteReader();
+                dr.Close();
+                MySqlCommand cmd1 = new MySqlCommand("DELETE from randevu_bakim where randevu_id=" + dataGridView1.SelectedRows[i].Cells["randevu_id"].Value + "", con.baglan());
+                MySqlDataReader dr1 = cmd1.ExecuteReader();
                 MsgRanduvuSil msgRandevuSil = new MsgRanduvuSil();
                 msgRandevuSil.Show();
-
+                
+                dr1.Close();
+                
                 Datagetir();
+
             }
-
-            //Hesapla();
-
 
         }
 
@@ -202,28 +182,28 @@ namespace BiServis
                 e.Graphics.DrawString(dataGridView1.Rows[i].Cells[2].Value.ToString(), Icerik, sb, 150, 300 + i * 30, st);
                 e.Graphics.DrawString(dataGridView1.Rows[i].Cells[1].Value.ToString(), Icerik, sb, 300, 300 + i * 30, st);
 
-
-                if (con.State == ConnectionState.Closed) con.Open();
-                OleDbCommand cmd = new OleDbCommand("Select sum(bakim_ucret) from randevu_bakim where randevu_id=" + comboBox2.Items[i] + "", con);
+                cmd.Connection = con.baglan();
+                cmd.CommandText = "Select sum(bakim_ucret) from randevu_bakim where randevu_id=" + comboBox2.Items[i] + "";
                 toplam = cmd.ExecuteScalar().ToString() + " TL";
                 e.Graphics.DrawString(toplam, Icerik, sb, 649, 300 + i * 30, st);
-                con.Close();
+                
             }
 
-            if (con.State == ConnectionState.Closed) con.Open();
+           
             if (comboBox1.Text == "Tümü")
             {
-                OleDbCommand cmd1 = new OleDbCommand("Select sum(bakim_ucret) from randevu_bakim where bis_sahibi='" + user_name + "'", con);
-                toplam1 = cmd1.ExecuteScalar().ToString();
-
+                cmd.Connection = con.baglan();
+                cmd.CommandText = "Select sum(bakim_ucret) from randevu_bakim where bis_sahibi='" + user_name + "'";
+                toplam1 = cmd.ExecuteScalar().ToString();
 
             }
             else
             {
-                OleDbCommand cmd1 = new OleDbCommand("Select sum(bakim_ucret) from randevu_bakim where bis_sahibi='" + user_name + "' AND bis_ismi='" + comboBox1.Text + "'", con);
-                toplam1 = cmd1.ExecuteScalar().ToString();
+                cmd.Connection = con.baglan();
+                cmd.CommandText = "Select sum(bakim_ucret) from randevu_bakim where bis_sahibi='" + user_name + "' AND bis_ismi='" + comboBox1.Text + "'";
+                toplam1 = cmd.ExecuteScalar().ToString();
             }
-            con.Close();
+            
 
 
             e.Graphics.DrawString("--------------------------------------------------------------------------------------------------", altBaslik, sb, 150, 300 + 30 * dataGridView1.Rows.Count, st);

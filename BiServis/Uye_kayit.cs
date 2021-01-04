@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace BiServis
 {
@@ -12,8 +14,9 @@ namespace BiServis
             InitializeComponent();
         }
 
-        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.Oledb.12.0;Data Source=BiServis.accdb");
 
+        sqlcon baglan = new sqlcon();
+        MySqlCommand cmd = new MySqlCommand();
 
         public void userPass_tbx_Enter(object sender, EventArgs e)
         {
@@ -72,33 +75,37 @@ namespace BiServis
                 if ((user_pass == user_pass1) & (MailKontrolu.EmailKontrol(mail)))
                 {
 
-                    if (con.State == ConnectionState.Closed) con.Open();
-                    OleDbCommand sorgu = new OleDbCommand("SELECT * FROM kullanici where user_name='" + user_name + "'", con);
-                    OleDbDataReader reader = sorgu.ExecuteReader();
-                    if (reader.Read())
+                    cmd.Connection = baglan.baglan();
+                    cmd.CommandText = "SELECT * FROM kullanici where user_name='" + user_name + "'";
+                    cmd.ExecuteNonQuery();
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    
+                    if (dr.Read())
                     {
 
                         MsgKullaniciKullaniliyor msgKullaniciKullaniliyor = new MsgKullaniciKullaniliyor();
                         msgKullaniciKullaniliyor.Show();
+                        
 
                     }
                     else
                     {
-                        sorgu = new OleDbCommand("INSERT INTO kullanici(user_name,user_pass,kullanici_ad,kullanici_sad,kullanici_mail) values ('" + user_name + "','" + user_pass + "','" + k_adi + "','" + k_sadi + "','" + mail + "')", con);
-                        OleDbDataReader dr = sorgu.ExecuteReader();
+                        cmd.Connection = baglan.baglan();
+                        cmd.CommandText = "INSERT INTO kullanici(user_name,user_pass,kullanici_ad,kullanici_sad,kullanici_mail) values ('" + user_name + "','" + user_pass + "','" + k_adi + "','" + k_sadi + "','" + mail + "')";
+                        cmd.ExecuteNonQuery();
+                        
+
                         MsgKullaniciEkle msgKullaniciEkle = new MsgKullaniciEkle();
                         msgKullaniciEkle.Show();
                         Close();
                     }
-                    con.Close();
+                    
+
                 }
                 else
                 {
                     MsgYanlis msgYanlis = new MsgYanlis();
                     msgYanlis.Show();
-
-
-
                 }
             }
         }
