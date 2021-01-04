@@ -125,6 +125,12 @@
     <Compile Include="MsgRanduvuSil.Designer.cs">
       <DependentUpon>MsgRanduvuSil.cs</DependentUpon>
     </Compile>
+    <Compile Include="MsgSaatSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgSaatSec.Designer.cs">
+      <DependentUpon>MsgSaatSec.cs</DependentUpon>
+    </Compile>
     <Compile Include="MsgYanlis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +169,12 @@
     <Compile Include="Rapor.Designer.cs">
       <DependentUpon>Rapor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Saatsec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Saatsec.Designer.cs">
+      <DependentUpon>Saatsec.cs</DependentUpon>
+    </Compile>
     <Compile Include="sqlcon.cs" />
     <Compile Include="Uye_kayit.cs">
       <SubType>Form</SubType>
@@ -191,6 +203,9 @@
     <EmbeddedResource Include="MsgRanduvuSil.resx">
       <DependentUpon>MsgRanduvuSil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MsgSaatSec.resx">
+      <DependentUpon>MsgSaatSec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MsgYanlis.resx">
       <DependentUpon>MsgYanlis.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rapor.resx">
       <DependentUpon>Rapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Saatsec.resx">
+      <DependentUpon>Saatsec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Uye_kayit.resx">
       <DependentUpon>Uye_kayit.cs</DependentUpon>

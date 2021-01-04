@@ -134,3 +134,5 @@ C:\Users\armsa\Desktop\BiServisProduct\BiServis\obj\Debug\tr\BiServis.resources.
 C:\Users\armsa\Desktop\BiServisProduct\BiServis\obj\Debug\BiServis.csproj.CopyComplete
 C:\Users\armsa\Desktop\BiServisProduct\BiServis\obj\Debug\BiServis.exe
 C:\Users\armsa\Desktop\BiServisProduct\BiServis\obj\Debug\BiServis.pdb
+C:\Users\armsa\Desktop\BiServisProduct\BiServis\obj\Debug\BiServis.Saatsec.resources
+C:\Users\armsa\Desktop\BiServisProduct\BiServis\obj\Debug\BiServis.MsgSaatSec.resources
