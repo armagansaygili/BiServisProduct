@@ -19,12 +19,13 @@ namespace BiServisFirma
         {
             InitializeComponent();
         }
+        public static string perName;
         sqlcon con = new sqlcon();
         private void girisBtn_Click(object sender, EventArgs e)
         {
             string user_name = userName_tbx.Text;
             string user_pass = userPass_tbx.Text;
-
+            perName = user_name;
             SqlCommand cmd = new SqlCommand("SELECT * FROM personel where per_userName='" + user_name + "' AND per_sifre='" + user_pass + "'", con.baglan());
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())

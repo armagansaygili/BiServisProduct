@@ -143,7 +143,7 @@ namespace BiServisFirma
             this.button1.TabIndex = 11;
             this.button1.Text = "Kaydet";
             this.button1.UseVisualStyleBackColor = true;
-            //this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // isim_lbl
             // 
@@ -191,6 +191,7 @@ namespace BiServisFirma
             this.Controls.Add(this.groupBox1);
             this.Name = "Detay";
             this.Text = "Detay";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Detay_FormClosing);
             this.Load += new System.EventHandler(this.Detay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.detayDgv)).EndInit();
             this.groupBox1.ResumeLayout(false);

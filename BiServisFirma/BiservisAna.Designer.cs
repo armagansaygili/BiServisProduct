@@ -45,7 +45,6 @@ namespace BiServisFirma
             this.randevuDgv = new System.Windows.Forms.DataGridView();
             this.ranDetay_btn = new System.Windows.Forms.Button();
             this.ranSil_btn = new System.Windows.Forms.Button();
-            this.hesapEkle_btn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.perIs_btn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -207,15 +206,6 @@ namespace BiServisFirma
             this.ranSil_btn.UseVisualStyleBackColor = true;
             this.ranSil_btn.Click += new System.EventHandler(this.ranSil_btn_Click);
             // 
-            // hesapEkle_btn
-            // 
-            this.hesapEkle_btn.Location = new System.Drawing.Point(315, 140);
-            this.hesapEkle_btn.Name = "hesapEkle_btn";
-            this.hesapEkle_btn.Size = new System.Drawing.Size(226, 23);
-            this.hesapEkle_btn.TabIndex = 6;
-            this.hesapEkle_btn.Text = "Müşteri Hesabı Oluştur";
-            this.hesapEkle_btn.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.randevuDgv);
@@ -230,20 +220,21 @@ namespace BiServisFirma
             // 
             // perIs_btn
             // 
-            this.perIs_btn.Location = new System.Drawing.Point(315, 110);
+            this.perIs_btn.Location = new System.Drawing.Point(316, 123);
             this.perIs_btn.Name = "perIs_btn";
             this.perIs_btn.Size = new System.Drawing.Size(226, 23);
             this.perIs_btn.TabIndex = 13;
             this.perIs_btn.Text = "Personel İşlemleri";
             this.perIs_btn.UseVisualStyleBackColor = true;
+            this.perIs_btn.Click += new System.EventHandler(this.perIs_btn_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(315, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(316, 14);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(226, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(226, 94);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
@@ -255,7 +246,6 @@ namespace BiServisFirma
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.perIs_btn);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.hesapEkle_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -290,7 +280,6 @@ namespace BiServisFirma
         private System.Windows.Forms.DataGridView randevuDgv;
         private System.Windows.Forms.Button ranDetay_btn;
         private System.Windows.Forms.Button ranSil_btn;
-        private System.Windows.Forms.Button hesapEkle_btn;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button perIs_btn;
         private System.Windows.Forms.PictureBox pictureBox1;

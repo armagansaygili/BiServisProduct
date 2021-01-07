@@ -60,11 +60,18 @@
     <Compile Include="Detay.Designer.cs">
       <DependentUpon>Detay.cs</DependentUpon>
     </Compile>
+    <Compile Include="MailKontrolu.cs" />
     <Compile Include="MusteriBilgi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MusteriBilgi.Designer.cs">
       <DependentUpon>MusteriBilgi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerIslem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerIslem.Designer.cs">
+      <DependentUpon>PerIslem.cs</DependentUpon>
     </Compile>
     <Compile Include="PersonelGiris.cs">
       <SubType>Form</SubType>
@@ -83,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MusteriBilgi.resx">
       <DependentUpon>MusteriBilgi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerIslem.resx">
+      <DependentUpon>PerIslem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonelGiris.resx">
       <DependentUpon>PersonelGiris.cs</DependentUpon>

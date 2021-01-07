@@ -22,6 +22,20 @@ namespace BiServisFirma
         private void BiservisAna_Load(object sender, EventArgs e)
         {
 
+            SqlCommand cmd1 = new SqlCommand("select * from personel where per_userName='" + PersonelGiris.perName + "'",con.baglan());
+            SqlDataReader dr1 = cmd1.ExecuteReader();
+            while (dr1.Read())
+            {
+                if (dr1["yetki"].ToString() == "Yönetici")
+                {
+                    perIs_btn.Visible = true;
+                }
+                else
+                {
+                    perIs_btn.Visible = false;
+                }
+            }
+
             Datagetir();
             Datagrid_ayar();
         }
@@ -58,8 +72,10 @@ namespace BiServisFirma
         {
             string arizaBil = arizaBil_tbx.Text;
             string arizaUcret = arizaUcret_tbx.Text;
-            SqlCommand cmd = new SqlCommand("Insert into onarim(bakim,ariza_ucret) values ('" + arizaBil + "','" + arizaUcret + "')", con.baglan());
+            SqlCommand cmd = new SqlCommand("Insert into onarim(ariza,ariza_ucret) values ('" + arizaBil + "','" + arizaUcret + "')", con.baglan());
             SqlDataReader dr = cmd.ExecuteReader();
+
+            MessageBox.Show("Arıza/Bakım Hizmeti Eklendi.");
 
         }
         public static string musAd;
@@ -102,6 +118,12 @@ namespace BiServisFirma
             r_id = Convert.ToInt32(randevuDgv.CurrentRow.Cells["randevu_id"].Value);
             Detay detay = new Detay();
             detay.Show();
+        }
+
+        private void perIs_btn_Click(object sender, EventArgs e)
+        {
+            PerIslem perIslem = new PerIslem();
+            perIslem.Show();
         }
     }
 }

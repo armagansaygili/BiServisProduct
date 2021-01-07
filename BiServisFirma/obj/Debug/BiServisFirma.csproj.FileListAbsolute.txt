@@ -27,3 +27,4 @@ C:\Users\armsa\Desktop\BiServisProduct\BiServisFirma\obj\Debug\BiServisFirma.csp
 C:\Users\armsa\Desktop\BiServisProduct\BiServisFirma\obj\Debug\BiServisFirma.BiservisAna.resources
 C:\Users\armsa\Desktop\BiServisProduct\BiServisFirma\obj\Debug\BiServisFirma.MusteriBilgi.resources
 C:\Users\armsa\Desktop\BiServisProduct\BiServisFirma\obj\Debug\BiServisFirma.Detay.resources
+C:\Users\armsa\Desktop\BiServisProduct\BiServisFirma\obj\Debug\BiServisFirma.PerIslem.resources
