@@ -1,22 +1,19 @@
 ﻿using System;
-using System.Data;
-using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 
 namespace BiServis
 {
+
     public partial class Uye_kayit : Form
     {
+
+
+        sqlcon con = new sqlcon();
         public Uye_kayit()
         {
             InitializeComponent();
         }
-
-
-        sqlcon baglan = new sqlcon();
-        MySqlCommand cmd = new MySqlCommand();
 
         public void userPass_tbx_Enter(object sender, EventArgs e)
         {
@@ -63,9 +60,10 @@ namespace BiServis
             string k_adi = name_tbx.Text;
             string k_sadi = lastName_tbx.Text;
             string mail = mail_tbx.Text;
+            string tel = tel_tbx.Text;
 
 
-            if ((user_name == "") || (user_pass == "") || (k_adi == "") || (k_sadi == "") || (mail == ""))
+            if ((user_name == "") || (user_pass == "") || (k_adi == "") || (k_sadi == "") || (mail == "") || (tel == ""))
             {
                 MsgAlanDoldur form = new MsgAlanDoldur();
                 form.Show();
@@ -75,31 +73,32 @@ namespace BiServis
                 if ((user_pass == user_pass1) & (MailKontrolu.EmailKontrol(mail)))
                 {
 
-                    cmd.Connection = baglan.baglan();
-                    cmd.CommandText = "SELECT * FROM kullanici where user_name='" + user_name + "'";
+                    con.baglan();
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM kullanici where user_name='" + user_name + "'", con.baglan());
                     cmd.ExecuteNonQuery();
-                    MySqlDataReader dr = cmd.ExecuteReader();
-                    
+                    SqlDataReader dr = cmd.ExecuteReader();
+
                     if (dr.Read())
                     {
 
                         MsgKullaniciKullaniliyor msgKullaniciKullaniliyor = new MsgKullaniciKullaniliyor();
                         msgKullaniciKullaniliyor.Show();
-                        
+
 
                     }
                     else
                     {
-                        cmd.Connection = baglan.baglan();
-                        cmd.CommandText = "INSERT INTO kullanici(user_name,user_pass,kullanici_ad,kullanici_sad,kullanici_mail) values ('" + user_name + "','" + user_pass + "','" + k_adi + "','" + k_sadi + "','" + mail + "')";
-                        cmd.ExecuteNonQuery();
-                        
+                        dr.Close();
+                        SqlCommand cmd1 = new SqlCommand("INSERT INTO kullanici(user_name,user_pass,kullanici_ad,kullanici_sad,telefon,kullanici_mail) values ('" + user_name + "','" + user_pass + "','" + k_adi + "','" + k_sadi + "','" + tel + "','" + mail + "')", con.baglan());
+                        cmd1.ExecuteReader();
 
                         MsgKullaniciEkle msgKullaniciEkle = new MsgKullaniciEkle();
                         msgKullaniciEkle.Show();
                         Close();
                     }
-                    
+                    con.baglan().Close();
+
 
                 }
                 else

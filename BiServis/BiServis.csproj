@@ -83,6 +83,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="biservisDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>biservisDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MsgAlanDoldur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +240,17 @@
     <EmbeddedResource Include="Uye_kayit.resx">
       <DependentUpon>Uye_kayit.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="biservisDataSet.xsc">
+      <DependentUpon>biservisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="biservisDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>biservisDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="biservisDataSet.xss">
+      <DependentUpon>biservisDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace BiServis
 {
@@ -22,12 +21,12 @@ namespace BiServis
 
         private void Rapor_Load(object sender, EventArgs e)
         {
-            MySqlDataAdapter da = new MySqlDataAdapter("Select randevu.bis_isim,randevu.tarih,randevu.saat, randevu_bakim.bakim, randevu_bakim.bakim_ucret, randevu.durum, randevu.teslim_tarihi from randevu inner join randevu_bakim on randevu.randevu_id = randevu_bakim.randevu_id where randevu.randevu_id=" + r_id + "", con.baglan());
+            SqlDataAdapter da = new SqlDataAdapter("Select randevu.bis_isim,randevu.tarih,randevu.saat, randevu_bakim.bakim, randevu_bakim.bakim_ucret, randevu.durum, randevu.teslim_tarihi from randevu inner join randevu_bakim on randevu.randevu_id = randevu_bakim.randevu_id where randevu.randevu_id=" + r_id + "", con.baglan());
             DataTable ds = new DataTable();
             da.Fill(ds);
             dataGridView1.DataSource = ds;
 
-            
+
 
             dataGridView1.Columns[0].HeaderText = "Bisiklet İsmi";
             dataGridView1.Columns[1].HeaderText = "Randevu Tarihi";
@@ -96,7 +95,7 @@ namespace BiServis
                 e.Graphics.DrawString(dataGridView1.Rows[i].Cells[4].Value.ToString() + " TL", Icerik, sb, 649, 300 + i * 30, st);
             }
 
-            MySqlCommand cmd = new MySqlCommand();
+            SqlCommand cmd = new SqlCommand();
             cmd.Connection = con.baglan();
             cmd.CommandText = "Select sum(bakim_ucret) from randevu_bakim where randevu_id=" + r_id + "";
             string toplam = cmd.ExecuteScalar().ToString();

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+
 
 namespace BiServis
 {
@@ -14,11 +13,11 @@ namespace BiServis
         string user_name = Kullanici_giris.user_name;
         int r_id = Randevu_list.deger;
         sqlcon con = new sqlcon();
-        MySqlCommand cmd = new MySqlCommand();
+        SqlCommand cmd = new SqlCommand();
         public void Datagetir()
         {
 
-            MySqlDataAdapter da = new MySqlDataAdapter("select randevu_id,bis_isim, tarih, teslim_tarihi, durum from randevu where bis_sahibi='" + user_name + "'", con.baglan());
+            SqlDataAdapter da = new SqlDataAdapter("select randevu_id,bis_isim, tarih, teslim_tarihi, durum from randevu where bis_sahibi='" + user_name + "'", con.baglan());
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -31,7 +30,7 @@ namespace BiServis
         {
             cmd.Connection = con.baglan();
             cmd.CommandText = "SELECT * from bisiklet where bis_sahibi='" + user_name + "'";
-            MySqlDataReader dr = cmd.ExecuteReader();
+            SqlDataReader dr = cmd.ExecuteReader();
             comboBox1.Items.Add("Tümü");
 
             while (dr.Read())
@@ -86,19 +85,19 @@ namespace BiServis
                 Datagetir();
 
                 cmd.Connection = con.baglan();
-                cmd.CommandText = "select randevu_id from randevu";                
-                MySqlDataReader dr = cmd.ExecuteReader();
+                cmd.CommandText = "select randevu_id from randevu";
+                SqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
                 {
                     comboBox2.Items.Add(dr["randevu_id"]);
                 }
                 dr.Close();
-             
+
             }
             else
             {
-                MySqlDataAdapter da = new MySqlDataAdapter("select randevu_id,bis_isim, tarih, teslim_tarihi, durum from randevu where bis_sahibi='" + user_name + "' AND bis_isim ='" + comboBox1.Text + "'", con.baglan());
+                SqlDataAdapter da = new SqlDataAdapter("select randevu_id,bis_isim, tarih, teslim_tarihi, durum from randevu where bis_sahibi='" + user_name + "' AND bis_isim ='" + comboBox1.Text + "'", con.baglan());
                 DataTable ds = new DataTable();
                 da.Fill(ds);
                 dataGridView1.DataSource = ds;
@@ -107,7 +106,7 @@ namespace BiServis
 
                 cmd.Connection = con.baglan();
                 cmd.CommandText = "select randevu_id from randevu where bis_isim='" + comboBox1.Text + "'";
-                MySqlDataReader dr = cmd.ExecuteReader();
+                SqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
                 {
@@ -128,15 +127,15 @@ namespace BiServis
 
                 cmd.Connection = con.baglan();
                 cmd.CommandText = "DELETE from randevu where randevu_id=" + dataGridView1.SelectedRows[i].Cells["randevu_id"].Value + "";
-                MySqlDataReader dr = cmd.ExecuteReader();
+                SqlDataReader dr = cmd.ExecuteReader();
                 dr.Close();
-                MySqlCommand cmd1 = new MySqlCommand("DELETE from randevu_bakim where randevu_id=" + dataGridView1.SelectedRows[i].Cells["randevu_id"].Value + "", con.baglan());
-                MySqlDataReader dr1 = cmd1.ExecuteReader();
+                SqlCommand cmd1 = new SqlCommand("DELETE from randevu_bakim where randevu_id=" + dataGridView1.SelectedRows[i].Cells["randevu_id"].Value + "", con.baglan());
+                SqlDataReader dr1 = cmd1.ExecuteReader();
                 MsgRanduvuSil msgRandevuSil = new MsgRanduvuSil();
                 msgRandevuSil.Show();
-                
+
                 dr1.Close();
-                
+
                 Datagetir();
 
             }
@@ -186,10 +185,10 @@ namespace BiServis
                 cmd.CommandText = "Select sum(bakim_ucret) from randevu_bakim where randevu_id=" + comboBox2.Items[i] + "";
                 toplam = cmd.ExecuteScalar().ToString() + " TL";
                 e.Graphics.DrawString(toplam, Icerik, sb, 649, 300 + i * 30, st);
-                
+
             }
 
-           
+
             if (comboBox1.Text == "Tümü")
             {
                 cmd.Connection = con.baglan();
@@ -203,7 +202,7 @@ namespace BiServis
                 cmd.CommandText = "Select sum(bakim_ucret) from randevu_bakim where bis_sahibi='" + user_name + "' AND bis_ismi='" + comboBox1.Text + "'";
                 toplam1 = cmd.ExecuteScalar().ToString();
             }
-            
+
 
 
             e.Graphics.DrawString("--------------------------------------------------------------------------------------------------", altBaslik, sb, 150, 300 + 30 * dataGridView1.Rows.Count, st);

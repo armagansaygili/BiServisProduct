@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+
 
 namespace BiServis
 {
@@ -175,7 +169,7 @@ namespace BiServis
 
             #region Saatlerin müsaitlik ayarı
             #region 10:00
-            MySqlCommand cmd = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='10:00' ", con.baglan());
+            SqlCommand cmd = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='10:00' ", con.baglan());
             int saat10 = Convert.ToInt32(cmd.ExecuteScalar());
 
             if (saat10 > 0)
@@ -185,7 +179,7 @@ namespace BiServis
             #endregion
 
             #region 10:30
-            MySqlCommand cmd1 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='10:30' ", con.baglan());
+            SqlCommand cmd1 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='10:30' ", con.baglan());
             int saat1030 = Convert.ToInt32(cmd1.ExecuteScalar());
 
             if (saat1030 > 0)
@@ -195,7 +189,7 @@ namespace BiServis
             #endregion
 
             #region 11:00
-            MySqlCommand cmd2 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='11:00' ", con.baglan());
+            SqlCommand cmd2 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='11:00' ", con.baglan());
             int saat11 = Convert.ToInt32(cmd2.ExecuteScalar());
 
             if (saat11 > 0)
@@ -205,7 +199,7 @@ namespace BiServis
             #endregion
 
             #region 11:30
-            MySqlCommand cmd3 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='11:30' ", con.baglan());
+            SqlCommand cmd3 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='11:30' ", con.baglan());
             int saat1130 = Convert.ToInt32(cmd3.ExecuteScalar());
 
             if (saat1130 > 0)
@@ -215,7 +209,7 @@ namespace BiServis
             #endregion
 
             #region 12:00
-            MySqlCommand cmd4 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='12:00' ", con.baglan());
+            SqlCommand cmd4 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='12:00' ", con.baglan());
             int saat1200 = Convert.ToInt32(cmd4.ExecuteScalar());
 
             if (saat1200 > 0)
@@ -225,7 +219,7 @@ namespace BiServis
             #endregion
 
             #region 12:30
-            MySqlCommand cmd5 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='12:30' ", con.baglan());
+            SqlCommand cmd5 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='12:30' ", con.baglan());
             int saat1230 = Convert.ToInt32(cmd5.ExecuteScalar());
 
             if (saat1230 > 0)
@@ -235,17 +229,17 @@ namespace BiServis
             #endregion
 
             #region 13:00
-            MySqlCommand cmd6 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='13:00' ", con.baglan());
+            SqlCommand cmd6 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='13:00' ", con.baglan());
             int saat1300 = Convert.ToInt32(cmd6.ExecuteScalar());
 
             if (saat1300 > 0)
             {
                 btn13.Visible = false;
-            }           
+            }
             #endregion
 
             #region 13:30
-            MySqlCommand cmd7 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='13:30' ", con.baglan());
+            SqlCommand cmd7 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='13:30' ", con.baglan());
             int saat1330 = Convert.ToInt32(cmd7.ExecuteScalar());
 
             if (saat1330 > 0)
@@ -255,7 +249,7 @@ namespace BiServis
             #endregion
 
             #region 14:00
-            MySqlCommand cmd8 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='14:00' ", con.baglan());
+            SqlCommand cmd8 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='14:00' ", con.baglan());
             int saat1400 = Convert.ToInt32(cmd8.ExecuteScalar());
 
             if (saat1400 > 0)
@@ -265,7 +259,7 @@ namespace BiServis
             #endregion
 
             #region 14:30
-            MySqlCommand cmd9 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='14:30' ", con.baglan());
+            SqlCommand cmd9 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='14:30' ", con.baglan());
             int saat1430 = Convert.ToInt32(cmd9.ExecuteScalar());
 
             if (saat1430 > 0)
@@ -275,7 +269,7 @@ namespace BiServis
             #endregion
 
             #region 15:00
-            MySqlCommand cmd10 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='15:00' ", con.baglan());
+            SqlCommand cmd10 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='15:00' ", con.baglan());
             int saat15 = Convert.ToInt32(cmd10.ExecuteScalar());
 
             if (saat15 > 0)
@@ -285,7 +279,7 @@ namespace BiServis
             #endregion
 
             #region 15:30
-            MySqlCommand cmd11 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='15:30' ", con.baglan());
+            SqlCommand cmd11 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='15:30' ", con.baglan());
             int saat1530 = Convert.ToInt32(cmd11.ExecuteScalar());
 
             if (saat1530 > 0)
@@ -295,7 +289,7 @@ namespace BiServis
             #endregion
 
             #region 16:00
-            MySqlCommand cmd12 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='16:00' ", con.baglan());
+            SqlCommand cmd12 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='16:00' ", con.baglan());
             int saat16 = Convert.ToInt32(cmd12.ExecuteScalar());
 
             if (saat16 > 0)
@@ -305,7 +299,7 @@ namespace BiServis
             #endregion
 
             #region 16:30
-            MySqlCommand cmd13 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='16:30' ", con.baglan());
+            SqlCommand cmd13 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='16:30' ", con.baglan());
             int saat1630 = Convert.ToInt32(cmd13.ExecuteScalar());
 
             if (saat1630 > 0)
@@ -315,7 +309,7 @@ namespace BiServis
             #endregion
 
             #region 17:00
-            MySqlCommand cmd14 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='17:00' ", con.baglan());
+            SqlCommand cmd14 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='17:00' ", con.baglan());
             int saat17 = Convert.ToInt32(cmd14.ExecuteScalar());
 
             if (saat17 > 0)
@@ -325,7 +319,7 @@ namespace BiServis
             #endregion
 
             #region 17:30
-            MySqlCommand cmd15 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='17:30' ", con.baglan());
+            SqlCommand cmd15 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='17:30' ", con.baglan());
             int saat1730 = Convert.ToInt32(cmd15.ExecuteScalar());
 
             if (saat1730 > 0)
@@ -335,7 +329,7 @@ namespace BiServis
             #endregion
 
             #region 18:00
-            MySqlCommand cmd16 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='18:00' ", con.baglan());
+            SqlCommand cmd16 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='18:00' ", con.baglan());
             int saat18 = Convert.ToInt32(cmd16.ExecuteScalar());
 
             if (saat18 > 0)
@@ -345,7 +339,7 @@ namespace BiServis
             #endregion
 
             #region 18:30
-            MySqlCommand cmd17 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='18:30' ", con.baglan());
+            SqlCommand cmd17 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='18:30' ", con.baglan());
             int saat1830 = Convert.ToInt32(cmd17.ExecuteScalar());
 
             if (saat1830 > 0)
@@ -355,7 +349,7 @@ namespace BiServis
             #endregion
 
             #region 19:00
-            MySqlCommand cmd18 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='19:00' ", con.baglan());
+            SqlCommand cmd18 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='19:00' ", con.baglan());
             int saat19 = Convert.ToInt32(cmd18.ExecuteScalar());
 
             if (saat19 > 0)
@@ -365,7 +359,7 @@ namespace BiServis
             #endregion
 
             #region 19:30
-            MySqlCommand cmd19 = new MySqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='19:30' ", con.baglan());
+            SqlCommand cmd19 = new SqlCommand("Select count(saat) from randevu where tarih='" + tarih + "' AND saat='19:30' ", con.baglan());
             int saat1930 = Convert.ToInt32(cmd19.ExecuteScalar());
 
             if (saat1930 > 0)

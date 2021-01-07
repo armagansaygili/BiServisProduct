@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+﻿using System.Data.SqlClient;
 
 namespace BiServis
 {
     public class sqlcon
     {
-        public MySqlConnection baglan()
+        public SqlConnection baglan()
         {
-            MySqlConnection baglanti = new MySqlConnection("Server=localhost;Database=biservis;user=root;Pwd='';SslMode=none");
 
+            SqlConnection baglanti = new SqlConnection("Server=localhost;Database=biservis;Trusted_Connection=True");
             baglanti.Open();
-            MySqlConnection.ClearPool(baglanti);
-            MySqlConnection.ClearAllPools();
+            SqlConnection.ClearPool(baglanti);
+            SqlConnection.ClearAllPools();
             return (baglanti);
         }
     }

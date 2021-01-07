@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Data;
-using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 
 namespace BiServis
 {
@@ -14,35 +11,35 @@ namespace BiServis
         {
             InitializeComponent();
         }
-        
+
         sqlcon baglan = new sqlcon();
-        MySqlCommand cmd = new MySqlCommand();
+        SqlCommand cmd = new SqlCommand();
         public static string tarih1;
         string user_name = Kullanici_giris.user_name;
         private void Musteri_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-        
+
         private void Musteri_Load(object sender, EventArgs e)
         {
             Saatsec.saat = "";
             tarih1 = dateTimePicker1.Text;
             cmd.Connection = baglan.baglan();
             cmd.CommandText = "SELECT * FROM onarim";
-            MySqlDataReader dr = cmd.ExecuteReader();
-            
+            SqlDataReader dr = cmd.ExecuteReader();
+
 
 
             while (dr.Read())
             {
-                checkedListBox1.Items.Add(dr["bakim"]);
+                checkedListBox1.Items.Add(dr["ariza"]);
             }
             dr.Close();
 
 
             cmd.CommandText = "SELECT * FROM bisiklet where bis_sahibi='" + user_name + "'";
-            MySqlDataReader dr1 = cmd.ExecuteReader();
+            SqlDataReader dr1 = cmd.ExecuteReader();
 
             while (dr1.Read())
             {
@@ -63,7 +60,7 @@ namespace BiServis
             cmd.Connection = baglan.baglan();
             cmd.CommandText = "INSERT INTO bisiklet(bis_sahibi,bis_isim,bis_marka,bis_model,bis_yil,on_aktarici,arka_aktarici,fren_seti,jant_seti) values ('" + user_name + "','" + isim_tbx.Text + "','" + marka_tbx.Text + "','"
                 + model_tbx.Text + "','" + yil_tbx.Text + "','" + onAk_tbx.Text + "','" + arAk_tbx.Text + "','" + fren_tbx.Text + "','" + jant_tbx.Text + "')";
-            MySqlDataReader dr = cmd.ExecuteReader();
+            SqlDataReader dr = cmd.ExecuteReader();
 
             comboBox1.Items.Add(isim_tbx.Text);
 
@@ -87,7 +84,7 @@ namespace BiServis
         private void randevu_btn_Click(object sender, EventArgs e)
         {
 
-            if (Saatsec.saat  == "")
+            if (Saatsec.saat == "")
             {
                 MsgSaatSec msgSaatSec = new MsgSaatSec();
                 msgSaatSec.Show();
@@ -97,28 +94,28 @@ namespace BiServis
                 //sqlcon con = new sqlcon();
                 cmd.Connection = baglan.baglan();
                 cmd.CommandText = "SELECT * from bisiklet where bis_isim='" + comboBox1.Text + "'";
-                MySqlDataReader bis_ismidr = cmd.ExecuteReader();
+                SqlDataReader bis_ismidr = cmd.ExecuteReader();
 
                 string tarih = dateTimePicker1.Text;
                 while (bis_ismidr.Read())
                 {
 
-                    MySqlCommand cmd1 = new MySqlCommand("INSERT INTO randevu(bis_sahibi,bis_isim,tarih,saat) values ('" + user_name + "','" + bis_ismidr["bis_isim"] + "','" + tarih + "','" + Saatsec.saat + "')", baglan.baglan());
-                    MySqlDataReader dr2 = cmd1.ExecuteReader();
+                    SqlCommand cmd1 = new SqlCommand("INSERT INTO randevu(bis_sahibi,bis_isim,tarih,saat) values ('" + user_name + "','" + bis_ismidr["bis_isim"] + "','" + tarih + "','" + Saatsec.saat + "')", baglan.baglan());
+                    SqlDataReader dr2 = cmd1.ExecuteReader();
 
                     for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
                     {
-                        MySqlCommand cmd2 = new MySqlCommand("SELECT randevu_id FROM randevu ORDER BY randevu_id DESC LIMIT 1", baglan.baglan());
-                        MySqlDataReader randevu_iddr = cmd2.ExecuteReader();
+                        SqlCommand cmd2 = new SqlCommand("SELECT randevu_id FROM randevu ORDER BY randevu_id DESC", baglan.baglan());
+                        SqlDataReader randevu_iddr = cmd2.ExecuteReader();
 
-                        MySqlCommand cmd3 = new MySqlCommand("SELECT * FROM `onarim` WHERE `bakim`='" + checkedListBox1.CheckedItems[i] + "'", baglan.baglan());
-                        MySqlDataReader ucretdr = cmd3.ExecuteReader();
+                        SqlCommand cmd3 = new SqlCommand("SELECT * FROM onarim WHERE ariza='" + checkedListBox1.CheckedItems[i] + "'", baglan.baglan());
+                        SqlDataReader ucretdr = cmd3.ExecuteReader();
 
                         while (ucretdr.Read() && randevu_iddr.Read())
                         {
 
-                            MySqlCommand cmd4 = new MySqlCommand("INSERT INTO randevu_bakim(randevu_id,bis_sahibi,bis_ismi,bakim,bakim_ucret) values ('" + randevu_iddr["randevu_id"] + "','" + user_name + "','" + comboBox1.Text + "','" + checkedListBox1.CheckedItems[i] + "','" + ucretdr["ariza_ucret"] + "')", baglan.baglan());
-                            MySqlDataReader dr3 = cmd4.ExecuteReader();
+                            SqlCommand cmd4 = new SqlCommand("INSERT INTO randevu_bakim(randevu_id,bis_sahibi,bis_ismi,bakim,bakim_ucret) values ('" + randevu_iddr["randevu_id"] + "','" + user_name + "','" + comboBox1.Text + "','" + checkedListBox1.CheckedItems[i] + "','" + ucretdr["ariza_ucret"] + "')", baglan.baglan());
+                            SqlDataReader dr3 = cmd4.ExecuteReader();
                             dr3.Close();
 
                         }
@@ -137,7 +134,7 @@ namespace BiServis
 
         private void dateTimePicker1_closeUp(object sender, EventArgs e)
         {
-            
+
             tarih1 = dateTimePicker1.Text;
             Saatsec saatsec = new Saatsec();
             saatsec.Show();

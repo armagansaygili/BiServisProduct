@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Data;
-using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
-
 
 namespace BiServis
 {
@@ -19,9 +15,7 @@ namespace BiServis
         public static string user_name;
 
 
-        sqlcon baglan = new sqlcon();
-        MySqlCommand cmd = new MySqlCommand();
-        
+        sqlcon con = new sqlcon();
 
         public void userPass_tbx_Enter(object sender, EventArgs e)
         {
@@ -47,7 +41,7 @@ namespace BiServis
         private void uye_link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Uye_kayit uye_Kayit = new Uye_kayit();
-            uye_Kayit.ShowDialog();
+            uye_Kayit.Show();
         }
 
         private void grs_btn_Click(object sender, EventArgs e)
@@ -55,9 +49,8 @@ namespace BiServis
             user_name = userName_tbx.Text;
             string user_pass = userPass_tbx.Text;
 
-            cmd.Connection = baglan.baglan();
-            cmd.CommandText = "SELECT * FROM kullanici where user_name='" + user_name + "' AND user_pass='" + user_pass + "'";
-            MySqlDataReader dr = cmd.ExecuteReader();    
+            SqlCommand cmd = new SqlCommand("SELECT * FROM kullanici where user_name='" + user_name + "' AND user_pass='" + user_pass + "'", con.baglan());
+            SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
                 Musteri musteri = new Musteri();
@@ -71,7 +64,7 @@ namespace BiServis
                 MsgBox msgBox = new MsgBox();
                 msgBox.Show();
             }
-            
+
         }
 
         private void cikis_btn_Click(object sender, EventArgs e)
