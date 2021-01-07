@@ -190,6 +190,7 @@ namespace BiServisFirma
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Detay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Detay";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Detay_FormClosing);
             this.Load += new System.EventHandler(this.Detay_Load);

@@ -31,6 +31,10 @@ namespace BiServisFirma
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,10 +68,6 @@ namespace BiServisFirma
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label17 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -121,6 +121,41 @@ namespace BiServisFirma
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personel Ekle";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(114, 352);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(120, 24);
+            this.comboBox2.TabIndex = 8;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(13, 355);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 16);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Yetki:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(114, 235);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(120, 22);
+            this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.CloseUp += new System.EventHandler(this.dateTimePicker1_CloseUp);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(13, 240);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(75, 16);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "Giriş Tarihi:";
             // 
             // label7
             // 
@@ -199,6 +234,7 @@ namespace BiServisFirma
             // 
             this.perSTekrar_tbx.Location = new System.Drawing.Point(114, 316);
             this.perSTekrar_tbx.Name = "perSTekrar_tbx";
+            this.perSTekrar_tbx.PasswordChar = '*';
             this.perSTekrar_tbx.Size = new System.Drawing.Size(120, 22);
             this.perSTekrar_tbx.TabIndex = 7;
             // 
@@ -206,6 +242,7 @@ namespace BiServisFirma
             // 
             this.perSifre_tbx.Location = new System.Drawing.Point(114, 273);
             this.perSifre_tbx.Name = "perSifre_tbx";
+            this.perSifre_tbx.PasswordChar = '*';
             this.perSifre_tbx.Size = new System.Drawing.Size(120, 22);
             this.perSifre_tbx.TabIndex = 6;
             // 
@@ -409,41 +446,6 @@ namespace BiServisFirma
             this.textBox14.Size = new System.Drawing.Size(120, 22);
             this.textBox14.TabIndex = 1;
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(13, 240);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(75, 16);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "Giriş Tarihi:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(114, 235);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(120, 22);
-            this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.CloseUp += new System.EventHandler(this.dateTimePicker1_CloseUp);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(13, 355);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 16);
-            this.label17.TabIndex = 15;
-            this.label17.Text = "Yetki:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(114, 352);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 24);
-            this.comboBox2.TabIndex = 8;
-            // 
             // PerIslem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +453,7 @@ namespace BiServisFirma
             this.ClientSize = new System.Drawing.Size(585, 451);
             this.Controls.Add(this.splitContainer1);
             this.Name = "PerIslem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "PerIslem";
             this.Load += new System.EventHandler(this.PerIslem_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

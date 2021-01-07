@@ -74,8 +74,8 @@ namespace BiServis
             e.Graphics.DrawString(bugun.ToLongDateString(), Icerik, sb, 550, 107, st);
 
             e.Graphics.DrawString("--------------------------------------------------------------", altBaslik, sb, 353, 120, st);
-            e.Graphics.DrawString("Tarih", altBaslik, sb, 150, 250, st);
-            e.Graphics.DrawString("Bisiklet İsmi", altBaslik, sb, 300, 250, st);
+            e.Graphics.DrawString("Bisiklet İsmi", altBaslik, sb, 150, 250, st);
+            e.Graphics.DrawString("Tarih", altBaslik, sb, 300, 250, st);
             e.Graphics.DrawString("Yapılan İşlem", altBaslik, sb, 450, 250, st);
             e.Graphics.DrawString("Tutar", altBaslik, sb, 649, 250, st);
             e.Graphics.DrawString("--------------------------------------------------------------------------------------------------", altBaslik, sb, 150, 280, st);

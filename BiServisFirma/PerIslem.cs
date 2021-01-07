@@ -40,7 +40,7 @@ namespace BiServisFirma
 
         private void ekle_btn_Click(object sender, EventArgs e)
         {
-            string user_name = perAdi_tbx.Text;
+            string user_name = perKAdi_tbx.Text;
             string user_pass = perSifre_tbx.Text;
             string user_pass1 = perSTekrar_tbx.Text;
             string k_adi = perAdi_tbx.Text;
@@ -74,7 +74,7 @@ namespace BiServisFirma
                     else
                     {
                         dr.Close();
-                        SqlCommand cmd1 = new SqlCommand("INSERT INTO personel(per_userName,per_sifre,per_adi,per_soyadi,per_giris,telefon,per_mail,yetki) values ('" + k_adi + "','" + user_pass + "','" + user_name + "','" + k_sadi + "','" + tarih + "','" + tel + "','" + mail + "','" + comboBox2.Text + "')", con.baglan());
+                        SqlCommand cmd1 = new SqlCommand("INSERT INTO personel(per_userName,per_sifre,per_adi,per_soyadi,per_giris,telefon,per_mail,yetki) values ('" + user_name + "','" + user_pass + "','" + k_adi + "','" + k_sadi + "','" + tarih + "','" + tel + "','" + mail + "','" + comboBox2.Text + "')", con.baglan());
                         cmd1.ExecuteReader();
 
                         MessageBox.Show("Personel başarıyla eklendi.", "Bilgi");

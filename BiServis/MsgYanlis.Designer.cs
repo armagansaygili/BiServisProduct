@@ -101,6 +101,7 @@ namespace BiServis
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MsgYanlis";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MsgYanlis";
             this.TopMost = true;
             this.panel1.ResumeLayout(false);

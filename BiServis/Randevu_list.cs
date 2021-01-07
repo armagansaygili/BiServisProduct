@@ -135,7 +135,7 @@ namespace BiServis
                 msgRandevuSil.Show();
 
                 dr1.Close();
-
+                comboBox1.SelectedIndex = 0;
                 Datagetir();
 
             }
@@ -177,20 +177,21 @@ namespace BiServis
 
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                e.Graphics.DrawString(dataGridView1.Rows[i].Cells[2].Value.ToString(), Icerik, sb, 150, 300 + i * 30, st);
-                e.Graphics.DrawString(dataGridView1.Rows[i].Cells[1].Value.ToString(), Icerik, sb, 300, 300 + i * 30, st);
+                {
+                    e.Graphics.DrawString(dataGridView1.Rows[i].Cells[2].Value.ToString(), Icerik, sb, 150, 300 + i * 30, st);
+                    e.Graphics.DrawString(dataGridView1.Rows[i].Cells[1].Value.ToString(), Icerik, sb, 300, 300 + i * 30, st);
 
-                cmd.Connection = con.baglan();
-                cmd.CommandText = "Select sum(bakim_ucret) from randevu_bakim where randevu_id=" + comboBox2.Items[i] + "";
-                toplam = cmd.ExecuteScalar().ToString() + " TL";
-                e.Graphics.DrawString(toplam, Icerik, sb, 649, 300 + i * 30, st);
+                    cmd.Connection = con.baglan();
+                    cmd.CommandText = "Select sum(bakim_ucret) from randevu_bakim where randevu_id=" + comboBox2.Items[i] + "";
+                    toplam = cmd.ExecuteScalar().ToString() + " TL";
+                    e.Graphics.DrawString(toplam, Icerik, sb, 649, 300 + i * 30, st);
 
-            }
+                }
 
 
             if (comboBox1.Text == "Tümü")
             {
+
                 cmd.Connection = con.baglan();
                 cmd.CommandText = "Select sum(bakim_ucret) from randevu_bakim where bis_sahibi='" + user_name + "'";
                 toplam1 = cmd.ExecuteScalar().ToString();
@@ -201,10 +202,8 @@ namespace BiServis
                 cmd.Connection = con.baglan();
                 cmd.CommandText = "Select sum(bakim_ucret) from randevu_bakim where bis_sahibi='" + user_name + "' AND bis_ismi='" + comboBox1.Text + "'";
                 toplam1 = cmd.ExecuteScalar().ToString();
+                
             }
-
-
-
             e.Graphics.DrawString("--------------------------------------------------------------------------------------------------", altBaslik, sb, 150, 300 + 30 * dataGridView1.Rows.Count, st);
             e.Graphics.DrawString("Toplam Harcamanız: " + toplam1 + " TL", Icerik, sb, 520, 300 + 30 * (dataGridView1.Rows.Count + 1), st);
 

@@ -251,6 +251,7 @@ namespace BiServisFirma
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "BiservisAna";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BiservisAna";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BiservisAna_FormClosed);
             this.Load += new System.EventHandler(this.BiservisAna_Load);
